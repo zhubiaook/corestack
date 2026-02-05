@@ -87,1499 +87,1615 @@ _and an amazing person---we did it._
 
 ## Contents at a Glance
 
-[Contents](#bk01-toc.xhtml#bk01-toc)
+[Contents](#contents)
 
-[Preface](#pref01.xhtml#pref01)
+[**Preface**](#preface)
 
-[Acknowledgments](#pref02.xhtml#pref02)
+[**Acknowledgments**](#acknowledgments)
 
-[About the Author](#pref03.xhtml#pref03)
+[**About the Author**](#about-the-author)
 
-[**1 Introduction**](#ch01.xhtml#ch01)
+[**Chapter 1 - Introduction**](#chapter-1---introduction)
 
-[**2 Methodologies**](#ch02.xhtml#ch02)
+[**Chapter 2 - Methodologies**](#chapter-2---methodologies)
 
-[**3 Operating Systems**](#ch03.xhtml#ch03)
+[**Chapter 3 - Operating Systems**](#chapter-3---operating-systems)
 
-[**4 Observability Tools**](#ch04.xhtml#ch04)
+[**Chapter 4 - Observability Tools**](#chapter-4---observability-tools)
 
-[**5 Applications**](#ch05.xhtml#ch05)
+[**Chapter 5 - Applications**](#chapter-5---applications)
 
-[**6 CPUs**](#ch06.xhtml#ch06)
+[**Chapter 6 - CPUs**](#chapter-6---cpus)
 
-[**7 Memory**](#ch07.xhtml#ch07)
+[**Chapter 7 - Memory**](#chapter-7---memory)
 
-[**8 File Systems**](#ch08.xhtml#ch08)
+[**Chapter 8 - File Systems**](#chapter-8---file-systems)
 
-[**9 Disks**](#ch09.xhtml#ch09)
+[**Chapter 9 - Disks**](#chapter-9---disks)
 
-[**10 Network**](#ch10.xhtml#ch10)
+[**Chapter 10 - Network**](#chapter-10---network)
 
-[**11 Cloud Computing**](#ch11.xhtml#ch11)
+[**Chapter 11 - Cloud Computing**](#chapter-11---cloud-computing)
 
-[**12 Benchmarking**](#ch12.xhtml#ch12)
+[**Chapter 12 - Benchmarking**](#chapter-12---benchmarking)
 
-[**13 perf**](#ch13.xhtml#ch13)
+[**Chapter 13 - perf**](#chapter-13---perf)
 
-[**14 Ftrace**](#ch14.xhtml#ch14)
+[**Chapter 14 - Ftrace**](#chapter-14---ftrace)
 
-[**15 BPF**](#ch15.xhtml#ch15)
+[**Chapter 15 - BPF**](#chapter-15---bpf)
 
-[**16 Case Study**](#ch16.xhtml#ch16)
+[**Chapter 16 - Case Study**](#chapter-16---case-study)
 
-[**A USE Method: Linux**](#appa.xhtml#appa)
+[**Appendix A - USE Method: Linux**](#appendix-a---use-method-linux)
 
-[**B sar Summary**](#appb.xhtml#appb)
+[**Appendix B - sar Summary**](#appendix-b---sar-summary)
 
-[**C bpftrace One-Liners**](#appc.xhtml#appc)
+[**Appendix C - bpftrace One-Liners**](#appendix-c---bpftrace-one-liners)
 
-[**D Solutions to Selected Exercises**](#appd.xhtml#appd)
+[**Appendix D - Solutions to Selected Exercises**](#appendix-d---solutions-to-selected-exercises)
 
-[**E Systems Performance Who's Who**](#appe.xhtml#appe)
+[**Appendix E - Systems Performance Who's Who**](#appendix-e---systems-performance-whos-who)
 
-[**Glossary**](#gloss.xhtml#gloss)
+[**Glossary**](#glossary)
 
-[**Index**](#index.xhtml#index)
+[**Index**](#index)
+
+[**Code Snippets**](#code-snippets)
 
 ## Contents
 
-[Preface](#pref01.xhtml#pref01)
+[**Preface**](#preface)
 
-[Acknowledgments](#pref02.xhtml#pref02)
+[About This Edition](#about-this-edition)
 
-[About the Author](#pref03.xhtml#pref03)
+[About This Book](#about-this-book)
 
-[**1 Introduction**](#ch01.xhtml#ch01)
+[Operating System Coverage](#operating-system-coverage)
 
-[1.1 Systems Performance](#ch01.xhtml#ch01lev1)
+[Other Content](#other-content)
 
-[1.2 Roles](#ch01.xhtml#ch01lev2)
+[What Isn't Covered](#what-isnt-covered)
 
-[1.3 Activities](#ch01.xhtml#ch01lev3)
+[How This Book Is Structured](#how-this-book-is-structured)
 
-[1.4 Perspectives](#ch01.xhtml#ch01lev4)
+[As a Future Reference](#as-a-future-reference)
 
-[1.5 Performance Is Challenging](#ch01.xhtml#ch01lev5)
+[Tracing Examples](#tracing-examples)
 
-[1.5.1 Subjectivity](#ch01.xhtml#ch01lev5sec1)
+[Intended Audience](#intended-audience)
 
-[1.5.2 Complexity](#ch01.xhtml#ch01lev5sec2)
+[Typographic Conventions](#typographic-conventions)
 
-[1.5.3 Multiple Causes](#ch01.xhtml#ch01lev5sec3)
+[Supplemental Material, References, and Bibliography](#supplemental-material-references-and-bibliography)
 
-[1.5.4 Multiple Performance Issues](#ch01.xhtml#ch01lev5sec4)
+[**Acknowledgments**](#acknowledgments)
 
-[1.6 Latency](#ch01.xhtml#ch01lev6)
+[**About the Author**](#about-the-author)
 
-[1.7 Observability](#ch01.xhtml#ch01lev7)
+[**Chapter 1 - Introduction**](#chapter-1---introduction)
 
-[1.7.1 Counters, Statistics, and Metrics](#ch01.xhtml#ch01lev7sec1)
+[1.1 Systems Performance](#11-systems-performance)
 
-[1.7.2 Profiling](#ch01.xhtml#ch01lev7sec2)
+[1.2 Roles](#12-roles)
 
-[1.7.3 Tracing](#ch01.xhtml#ch01lev7sec3)
+[1.3 Activities](#13-activities)
 
-[1.8 Experimentation](#ch01.xhtml#ch01lev8)
+[1.4 Perspectives](#14-perspectives)
 
-[1.9 Cloud Computing](#ch01.xhtml#ch01lev9)
+[1.5 Performance Is Challenging](#15-performance-is-challenging)
 
-[1.10 Methodologies](#ch01.xhtml#ch01lev10)
+[1.5.1 Subjectivity](#151-subjectivity)
 
-[1.10.1 Linux Perf Analysis in 60 Seconds](#ch01.xhtml#ch01lev10sec1)
+[1.5.2 Complexity](#152-complexity)
 
-[1.11 Case Studies](#ch01.xhtml#ch01lev11)
+[1.5.3 Multiple Causes](#153-multiple-causes)
 
-[1.11.1 Slow Disks](#ch01.xhtml#ch01lev11sec1)
+[1.5.4 Multiple Performance Issues](#154-multiple-performance-issues)
 
-[1.11.2 Software Change](#ch01.xhtml#ch01lev11sec2)
+[1.6 Latency](#16-latency)
 
-[1.11.3 More Reading](#ch01.xhtml#ch01lev11sec3)
+[1.7 Observability](#17-observability)
 
-[1.12 References](#ch01.xhtml#ch01lev12)
+[1.7.1 Counters, Statistics, and Metrics](#171-counters-statistics-and-metrics)
 
-[**2 Methodologies**](#ch02.xhtml#ch02)
+[1.7.2 Profiling](#172-profiling)
 
-[2.1 Terminology](#ch02.xhtml#ch02lev1)
+[1.7.3 Tracing](#173-tracing)
 
-[2.2 Models](#ch02.xhtml#ch02lev2)
+[1.8 Experimentation](#18-experimentation)
 
-[2.2.1 System Under Test](#ch02.xhtml#ch02lev2sec1)
+[1.9 Cloud Computing](#19-cloud-computing)
 
-[2.2.2 Queueing System](#ch02.xhtml#ch02lev2sec2)
+[1.10 Methodologies](#110-methodologies)
 
-[2.3 Concepts](#ch02.xhtml#ch02lev3)
+[1.10.1 Linux Perf Analysis in 60 Seconds](#1101-linux-perf-analysis-in-60-seconds)
 
-[2.3.1 Latency](#ch02.xhtml#ch02lev3sec1)
+[1.11 Case Studies](#111-case-studies)
 
-[2.3.2 Time Scales](#ch02.xhtml#ch02lev3sec2)
+[1.11.1 Slow Disks](#1111-slow-disks)
 
-[2.3.3 Trade-Offs](#ch02.xhtml#ch02lev3sec3)
+[1.11.2 Software Change](#1112-software-change)
 
-[2.3.4 Tuning Efforts](#ch02.xhtml#ch02lev3sec4)
+[1.11.3 More Reading](#1113-more-reading)
 
-[2.3.5 Level of Appropriateness](#ch02.xhtml#ch02lev3sec5)
+[1.12 References](#112-references)
 
-[2.3.6 When to Stop Analysis](#ch02.xhtml#ch02lev3sec6)
+[**Chapter 2 - Methodologies**](#chapter-2---methodologies)
 
-[2.3.7 Point-in-Time Recommendations](#ch02.xhtml#ch02lev3sec7)
+[2.1 Terminology](#21-terminology)
 
-[2.3.8 Load vs. Architecture](#ch02.xhtml#ch02lev3sec8)
+[2.2 Models](#22-models)
 
-[2.3.9 Scalability](#ch02.xhtml#ch02lev3sec9)
+[2.2.1 System Under Test](#221-system-under-test)
 
-[2.3.10 Metrics](#ch02.xhtml#ch02lev3sec10)
+[2.2.2 Queueing System](#222-queueing-system)
 
-[2.3.11 Utilization](#ch02.xhtml#ch02lev3sec11)
+[2.3 Concepts](#23-concepts)
 
-[2.3.12 Saturation](#ch02.xhtml#ch02lev3sec12)
+[2.3.1 Latency](#231-latency)
 
-[2.3.13 Profiling](#ch02.xhtml#ch02lev3sec13)
+[2.3.2 Time Scales](#232-time-scales)
 
-[2.3.14 Caching](#ch02.xhtml#ch02lev3sec14)
+[2.3.3 Trade-Offs](#233-trade-offs)
 
-[2.3.15 Known-Unknowns](#ch02.xhtml#ch02lev3sec15)
+[2.3.4 Tuning Efforts](#234-tuning-efforts)
 
-[2.4 Perspectives](#ch02.xhtml#ch02lev4)
+[2.3.5 Level of Appropriateness](#235-level-of-appropriateness)
 
-[2.4.1 Resource Analysis](#ch02.xhtml#ch02lev4sec1)
+[2.3.6 When to Stop Analysis](#236-when-to-stop-analysis)
 
-[2.4.2 Workload Analysis](#ch02.xhtml#ch02lev4sec2)
+[2.3.7 Point-in-Time Recommendations](#237-point-in-time-recommendations)
 
-[2.5 Methodology](#ch02.xhtml#ch02lev5)
+[2.3.8 Load vs. Architecture](#238-load-vs-architecture)
 
-[2.5.1 Streetlight Anti-Method](#ch02.xhtml#ch02lev5sec1)
+[2.3.9 Scalability](#239-scalability)
 
-[2.5.2 Random Change Anti-Method](#ch02.xhtml#ch02lev5sec2)
+[2.3.10 Metrics](#2310-metrics)
 
-[2.5.3 Blame-Someone-Else Anti-Method](#ch02.xhtml#ch02lev5sec3)
+[2.3.11 Utilization](#2311-utilization)
 
-[2.5.4 Ad Hoc Checklist Method](#ch02.xhtml#ch02lev5sec4)
+[2.3.12 Saturation](#2312-saturation)
 
-[2.5.5 Problem Statement](#ch02.xhtml#ch02lev5sec5)
+[2.3.13 Profiling](#2313-profiling)
 
-[2.5.6 Scientific Method](#ch02.xhtml#ch02lev5sec6)
+[2.3.14 Caching](#2314-caching)
 
-[2.5.7 Diagnosis Cycle](#ch02.xhtml#ch02lev5sec7)
+[2.3.15 Known-Unknowns](#2315-known-unknowns)
 
-[2.5.8 Tools Method](#ch02.xhtml#ch02lev5sec8)
+[2.4 Perspectives](#24-perspectives)
 
-[2.5.9 The USE Method](#ch02.xhtml#ch02lev5sec9)
+[2.4.1 Resource Analysis](#241-resource-analysis)
 
-[2.5.10 The RED Method](#ch02.xhtml#ch02lev5sec10)
+[2.4.2 Workload Analysis](#242-workload-analysis)
 
-[2.5.11 Workload Characterization](#ch02.xhtml#ch02lev5sec11)
+[2.5 Methodology](#25-methodology)
 
-[2.5.12 Drill-Down Analysis](#ch02.xhtml#ch02lev5sec12)
+[2.5.1 Streetlight Anti-Method](#251-streetlight-anti-method)
 
-[2.5.13 Latency Analysis](#ch02.xhtml#ch02lev5sec13)
+[2.5.2 Random Change Anti-Method](#252-random-change-anti-method)
 
-[2.5.14 Method R](#ch02.xhtml#ch02lev5sec14)
+[2.5.3 Blame-Someone-Else Anti-Method](#253-blame-someone-else-anti-method)
 
-[2.5.15 Event Tracing](#ch02.xhtml#ch02lev5sec15)
+[2.5.4 Ad Hoc Checklist Method](#254-ad-hoc-checklist-method)
 
-[2.5.16 Baseline Statistics](#ch02.xhtml#ch02lev5sec16)
+[2.5.5 Problem Statement](#255-problem-statement)
 
-[2.5.17 Static Performance Tuning](#ch02.xhtml#ch02lev5sec17)
+[2.5.6 Scientific Method](#256-scientific-method)
 
-[2.5.18 Cache Tuning](#ch02.xhtml#ch02lev5sec18)
+[2.5.7 Diagnosis Cycle](#257-diagnosis-cycle)
 
-[2.5.19 Micro-Benchmarking](#ch02.xhtml#ch02lev5sec19)
+[2.5.8 Tools Method](#258-tools-method)
 
-[2.5.20 Performance Mantras](#ch02.xhtml#ch02lev5sec20)
+[2.5.9 The USE Method](#259-the-use-method)
 
-[2.6 Modeling](#ch02.xhtml#ch02lev6)
+[2.5.10 The RED Method](#2510-the-red-method)
 
-[2.6.1 Enterprise vs. Cloud](#ch02.xhtml#ch02lev6sec1)
+[2.5.11 Workload Characterization](#2511-workload-characterization)
 
-[2.6.2 Visual Identification](#ch02.xhtml#ch02lev6sec2)
+[2.5.12 Drill-Down Analysis](#2512-drill-down-analysis)
 
-[2.6.3 Amdahl's Law of Scalability](#ch02.xhtml#ch02lev6sec3)
+[2.5.13 Latency Analysis](#2513-latency-analysis)
 
-[2.6.4 Universal Scalability Law](#ch02.xhtml#ch02lev6sec4)
+[2.5.14 Method R](#2514-method-r)
 
-[2.6.5 Queueing Theory](#ch02.xhtml#ch02lev6sec5)
+[2.5.15 Event Tracing](#2515-event-tracing)
 
-[2.7 Capacity Planning](#ch02.xhtml#ch02lev7)
+[2.5.16 Baseline Statistics](#2516-baseline-statistics)
 
-[2.7.1 Resource Limits](#ch02.xhtml#ch02lev7sec1)
+[2.5.17 Static Performance Tuning](#2517-static-performance-tuning)
 
-[2.7.2 Factor Analysis](#ch02.xhtml#ch02lev7sec2)
+[2.5.18 Cache Tuning](#2518-cache-tuning)
 
-[2.7.3 Scaling Solutions](#ch02.xhtml#ch02lev7sec3)
+[2.5.19 Micro-Benchmarking](#2519-micro-benchmarking)
 
-[2.8 Statistics](#ch02.xhtml#ch02lev8)
+[2.5.20 Performance Mantras](#2520-performance-mantras)
 
-[2.8.1 Quantifying Performance Gains](#ch02.xhtml#ch02lev8sec1)
+[2.6 Modeling](#26-modeling)
 
-[2.8.2 Averages](#ch02.xhtml#ch02lev8sec2)
+[2.6.1 Enterprise vs. Cloud](#261-enterprise-vs-cloud)
 
-[2.8.3 Standard Deviation, Percentiles, Median](#ch02.xhtml#ch02lev8sec3)
+[2.6.2 Visual Identification](#262-visual-identification)
 
-[2.8.4 Coefficient of Variation](#ch02.xhtml#ch02lev8sec4)
+[2.6.3 Amdahl's Law of Scalability](#263-amdahls-law-of-scalability)
 
-[2.8.5 Multimodal Distributions](#ch02.xhtml#ch02lev8sec5)
+[2.6.4 Universal Scalability Law](#264-universal-scalability-law)
 
-[2.8.6 Outliers](#ch02.xhtml#ch02lev8sec6)
+[2.6.5 Queueing Theory](#265-queueing-theory)
 
-[2.9 Monitoring](#ch02.xhtml#ch02lev9)
+[2.7 Capacity Planning](#27-capacity-planning)
 
-[2.9.1 Time-Based Patterns](#ch02.xhtml#ch02lev9sec1)
+[2.7.1 Resource Limits](#271-resource-limits)
 
-[2.9.2 Monitoring Products](#ch02.xhtml#ch02lev9sec2)
+[2.7.2 Factor Analysis](#272-factor-analysis)
 
-[2.9.3 Summary-Since-Boot](#ch02.xhtml#ch02lev9sec3)
+[2.7.3 Scaling Solutions](#273-scaling-solutions)
 
-[2.10 Visualizations](#ch02.xhtml#ch02lev10)
+[2.8 Statistics](#28-statistics)
 
-[2.10.1 Line Chart](#ch02.xhtml#ch02lev10sec1)
+[2.8.1 Quantifying Performance Gains](#281-quantifying-performance-gains)
 
-[2.10.2 Scatter Plots](#ch02.xhtml#ch02lev10sec2)
+[2.8.2 Averages](#282-averages)
 
-[2.10.3 Heat Maps](#ch02.xhtml#ch02lev10sec3)
+[2.8.3 Standard Deviation, Percentiles, Median](#283-standard-deviation-percentiles-median)
 
-[2.10.4 Timeline Charts](#ch02.xhtml#ch02lev10sec4)
+[2.8.4 Coefficient of Variation](#284-coefficient-of-variation)
 
-[2.10.5 Surface Plot](#ch02.xhtml#ch02lev10sec5)
+[2.8.5 Multimodal Distributions](#285-multimodal-distributions)
 
-[2.10.6 Visualization Tools](#ch02.xhtml#ch02lev10sec6)
+[2.8.6 Outliers](#286-outliers)
 
-[2.11 Exercises](#ch02.xhtml#ch02lev11)
+[2.9 Monitoring](#29-monitoring)
 
-[2.12 References](#ch02.xhtml#ch02lev12)
+[2.9.1 Time-Based Patterns](#291-time-based-patterns)
 
-[**3 Operating Systems**](#ch03.xhtml#ch03)
+[2.9.2 Monitoring Products](#292-monitoring-products)
 
-[3.1 Terminology](#ch03.xhtml#ch03lev1)
+[2.9.3 Summary-Since-Boot](#293-summary-since-boot)
 
-[3.2 Background](#ch03.xhtml#ch03lev2)
+[2.10 Visualizations](#210-visualizations)
 
-[3.2.1 Kernel](#ch03.xhtml#ch03lev2sec1)
+[2.10.1 Line Chart](#2101-line-chart)
 
-[3.2.2 Kernel and User Modes](#ch03.xhtml#ch03lev2sec2)
+[2.10.2 Scatter Plots](#2102-scatter-plots)
 
-[3.2.3 System Calls](#ch03.xhtml#ch03lev2sec3)
+[2.10.3 Heat Maps](#2103-heat-maps)
 
-[3.2.4 Interrupts](#ch03.xhtml#ch03lev2sec4)
+[2.10.4 Timeline Charts](#2104-timeline-charts)
 
-[3.2.5 Clock and Idle](#ch03.xhtml#ch03lev2sec5)
+[2.10.5 Surface Plot](#2105-surface-plot)
 
-[3.2.6 Processes](#ch03.xhtml#ch03lev2sec6)
+[2.10.6 Visualization Tools](#2106-visualization-tools)
 
-[3.2.7 Stacks](#ch03.xhtml#ch03lev2sec7)
+[2.11 Exercises](#211-exercises)
 
-[3.2.8 Virtual Memory](#ch03.xhtml#ch03lev2sec8)
+[2.12 References](#212-references)
 
-[3.2.9 Schedulers](#ch03.xhtml#ch03lev2sec9)
+[**Chapter 3 - Operating Systems**](#chapter-3---operating-systems)
 
-[3.2.10 File Systems](#ch03.xhtml#ch03lev2sec10)
+[3.1 Terminology](#31-terminology)
 
-[3.2.11 Caching](#ch03.xhtml#ch03lev2sec11)
+[3.2 Background](#32-background)
 
-[3.2.12 Networking](#ch03.xhtml#ch03lev2sec12)
+[3.2.1 Kernel](#321-kernel)
 
-[3.2.13 Device Drivers](#ch03.xhtml#ch03lev2sec13)
+[3.2.2 Kernel and User Modes](#322-kernel-and-user-modes)
 
-[3.2.14 Multiprocessor](#ch03.xhtml#ch03lev2sec14)
+[3.2.3 System Calls](#323-system-calls)
 
-[3.2.15 Preemption](#ch03.xhtml#ch03lev2sec15)
+[3.2.4 Interrupts](#324-interrupts)
 
-[3.2.16 Resource Management](#ch03.xhtml#ch03lev2sec16)
+[3.2.5 Clock and Idle](#325-clock-and-idle)
 
-[3.2.17 Observability](#ch03.xhtml#ch03lev2sec17)
+[3.2.6 Processes](#326-processes)
 
-[3.3 Kernels](#ch03.xhtml#ch03lev3)
+[3.2.7 Stacks](#327-stacks)
 
-[3.3.1 Unix](#ch03.xhtml#ch03lev3sec1)
+[3.2.8 Virtual Memory](#328-virtual-memory)
 
-[3.3.2 BSD](#ch03.xhtml#ch03lev3sec2)
+[3.2.9 Schedulers](#329-schedulers)
 
-[3.3.3 Solaris](#ch03.xhtml#ch03lev3sec3)
+[3.2.10 File Systems](#3210-file-systems)
 
-[3.4 Linux](#ch03.xhtml#ch03lev4)
+[3.2.11 Caching](#3211-caching)
 
-[3.4.1 Linux Kernel Developments](#ch03.xhtml#ch03lev4sec1)
+[3.2.12 Networking](#3212-networking)
 
-[3.4.2 systemd](#ch03.xhtml#ch03lev4sec2)
+[3.2.13 Device Drivers](#3213-device-drivers)
 
-[3.4.3 KPTI (Meltdown)](#ch03.xhtml#ch03lev4sec3)
+[3.2.14 Multiprocessor](#3214-multiprocessor)
 
-[3.4.4 Extended BPF](#ch03.xhtml#ch03lev4sec4)
+[3.2.15 Preemption](#3215-preemption)
 
-[3.5 Other Topics](#ch03.xhtml#ch03lev5)
+[3.2.16 Resource Management](#3216-resource-management)
 
-[3.5.1 PGO Kernels](#ch03.xhtml#ch03lev5sec1)
+[3.2.17 Observability](#3217-observability)
 
-[3.5.2 Unikernels](#ch03.xhtml#ch03lev5sec2)
+[3.3 Kernels](#33-kernels)
 
-[3.5.3 Microkernels and Hybrid Kernels](#ch03.xhtml#ch03lev5sec3)
+[3.3.1 Unix](#331-unix)
 
-[3.5.4 Distributed Operating Systems](#ch03.xhtml#ch03lev5sec4)
+[3.3.2 BSD](#332-bsd)
 
-[3.6 Kernel Comparisons](#ch03.xhtml#ch03lev6)
+[3.3.3 Solaris](#333-solaris)
 
-[3.7 Exercises](#ch03.xhtml#ch03lev7)
+[3.4 Linux](#34-linux)
 
-[3.8 References](#ch03.xhtml#ch03lev8)
+[3.4.1 Linux Kernel Developments](#341-linux-kernel-developments)
 
-[3.8.1 Additional Reading](#ch03.xhtml#ch03lev8sec1)
+[3.4.2 systemd](#342-systemd)
 
-[**4 Observability Tools**](#ch04.xhtml#ch04)
+[3.4.3 KPTI (Meltdown)](#343-kpti-meltdown)
 
-[4.1 Tool Coverage](#ch04.xhtml#ch04lev1)
+[3.4.4 Extended BPF](#344-extended-bpf)
 
-[4.1.1 Static Performance Tools](#ch04.xhtml#ch04lev1sec1)
+[3.5 Other Topics](#35-other-topics)
 
-[4.1.2 Crisis Tools](#ch04.xhtml#ch04lev1sec2)
+[3.5.1 PGO Kernels](#351-pgo-kernels)
 
-[4.2 Tool Types](#ch04.xhtml#ch04lev2)
+[3.5.2 Unikernels](#352-unikernels)
 
-[4.2.1 Fixed Counters](#ch04.xhtml#ch04lev2sec1)
+[3.5.3 Microkernels and Hybrid Kernels](#353-microkernels-and-hybrid-kernels)
 
-[4.2.2 Profiling](#ch04.xhtml#ch04lev2sec2)
+[3.5.4 Distributed Operating Systems](#354-distributed-operating-systems)
 
-[4.2.3 Tracing](#ch04.xhtml#ch04lev2sec3)
+[3.6 Kernel Comparisons](#36-kernel-comparisons)
 
-[4.2.4 Monitoring](#ch04.xhtml#ch04lev2sec4)
+[3.7 Exercises](#37-exercises)
 
-[4.3 Observability Sources](#ch04.xhtml#ch04lev3)
+[3.8 References](#38-references)
 
-[4.3.1 /proc](#ch04.xhtml#ch04lev3sec1)
+[3.8.1 Additional Reading](#381-additional-reading)
 
-[4.3.2 /sys](#ch04.xhtml#ch04lev3sec2)
+[**Chapter 4 - Observability Tools**](#chapter-4---observability-tools)
 
-[4.3.3 Delay Accounting](#ch04.xhtml#ch04lev3sec3)
+[4.1 Tool Coverage](#41-tool-coverage)
 
-[4.3.4 netlink](#ch04.xhtml#ch04lev3sec4)
+[4.1.1 Static Performance Tools](#411-static-performance-tools)
 
-[4.3.5 Tracepoints](#ch04.xhtml#ch04lev3sec5)
+[4.1.2 Crisis Tools](#412-crisis-tools)
 
-[4.3.6 kprobes](#ch04.xhtml#ch04lev3sec6)
+[4.2 Tool Types](#42-tool-types)
 
-[4.3.7 uprobes](#ch04.xhtml#ch04lev3sec7)
+[4.2.1 Fixed Counters](#421-fixed-counters)
 
-[4.3.8 USDT](#ch04.xhtml#ch04lev3sec8)
+[4.2.2 Profiling](#422-profiling)
 
-[4.3.9 Hardware Counters (PMCs)](#ch04.xhtml#ch04lev3sec9)
+[4.2.3 Tracing](#423-tracing)
 
-[4.3.10 Other Observability Sources](#ch04.xhtml#ch04lev3sec10)
+[4.2.4 Monitoring](#424-monitoring)
 
-[4.4 sar](#ch04.xhtml#ch04lev4)
+[4.3 Observability Sources](#43-observability-sources)
 
-[4.4.1 sar(1) Coverage](#ch04.xhtml#ch04lev4sec1)
+[4.3.1 /proc](#431-proc)
 
-[4.4.2 sar(1) Monitoring](#ch04.xhtml#ch04lev4sec2)
+[4.3.2 /sys](#432-sys)
 
-[4.4.3 sar(1) Live](#ch04.xhtml#ch04lev4sec3)
+[4.3.3 Delay Accounting](#433-delay-accounting)
 
-[4.4.4 sar(1) Documentation](#ch04.xhtml#ch04lev4sec4)
+[4.3.4 netlink](#434-netlink)
 
-[4.5 Tracing Tools](#ch04.xhtml#ch04lev5)
+[4.3.5 Tracepoints](#435-tracepoints)
 
-[4.6 Observing Observability](#ch04.xhtml#ch04lev6)
+[4.3.6 kprobes](#436-kprobes)
 
-[4.7 Exercises](#ch04.xhtml#ch04lev7)
+[4.3.7 uprobes](#437-uprobes)
 
-[4.8 References](#ch04.xhtml#ch04lev8)
+[4.3.8 USDT](#438-usdt)
 
-[**5 Applications**](#ch05.xhtml#ch05)
+[4.3.9 Hardware Counters (PMCs)](#439-hardware-counters-pmcs)
 
-[5.1 Application Basics](#ch05.xhtml#ch05lev1)
+[4.3.10 Other Observability Sources](#4310-other-observability-sources)
 
-[5.1.1 Objectives](#ch05.xhtml#ch05lev1sec1)
+[4.4 sar](#44-sar)
 
-[5.1.2 Optimize the Common Case](#ch05.xhtml#ch05lev1sec2)
+[4.4.1 sar(1) Coverage](#441-sar1-coverage)
 
-[5.1.3 Observability](#ch05.xhtml#ch05lev1sec3)
+[4.4.2 sar(1) Monitoring](#442-sar1-monitoring)
 
-[5.1.4 Big O Notation](#ch05.xhtml#ch05lev1sec4)
+[4.4.3 sar(1) Live](#443-sar1-live)
 
-[5.2 Application Performance Techniques](#ch05.xhtml#ch05lev2)
+[4.4.4 sar(1) Documentation](#444-sar1-documentation)
 
-[5.2.1 Selecting an I/O Size](#ch05.xhtml#ch05lev2sec1)
+[4.5 Tracing Tools](#45-tracing-tools)
 
-[5.2.2 Caching](#ch05.xhtml#ch05lev2sec2)
+[4.6 Observing Observability](#46-observing-observability)
 
-[5.2.3 Buffering](#ch05.xhtml#ch05lev2sec3)
+[4.7 Exercises](#47-exercises)
 
-[5.2.4 Polling](#ch05.xhtml#ch05lev2sec4)
+[4.8 References](#48-references)
 
-[5.2.5 Concurrency and Parallelism](#ch05.xhtml#ch05lev2sec5)
+[**Chapter 5 - Applications**](#chapter-5---applications)
 
-[5.2.6 Non-Blocking I/O](#ch05.xhtml#ch05lev2sec6)
+[5.1 Application Basics](#51-application-basics)
 
-[5.2.7 Processor Binding](#ch05.xhtml#ch05lev2sec7)
+[5.1.1 Objectives](#511-objectives)
 
-[5.2.8 Performance Mantras](#ch05.xhtml#ch05lev2sec8)
+[5.1.2 Optimize the Common Case](#512-optimize-the-common-case)
 
-[5.3 Programming Languages](#ch05.xhtml#ch05lev3)
+[5.1.3 Observability](#513-observability)
 
-[5.3.1 Compiled Languages](#ch05.xhtml#ch05lev3sec1)
+[5.1.4 Big O Notation](#514-big-o-notation)
 
-[5.3.2 Interpreted Languages](#ch05.xhtml#ch05lev3sec2)
+[5.2 Application Performance Techniques](#52-application-performance-techniques)
 
-[5.3.3 Virtual Machines](#ch05.xhtml#ch05lev3sec3)
+[5.2.1 Selecting an I/O Size](#521-selecting-an-io-size)
 
-[5.3.4 Garbage Collection](#ch05.xhtml#ch05lev3sec4)
+[5.2.2 Caching](#522-caching)
 
-[5.4 Methodology](#ch05.xhtml#ch05lev4)
+[5.2.3 Buffering](#523-buffering)
 
-[5.4.1 CPU Profiling](#ch05.xhtml#ch05lev4sec1)
+[5.2.4 Polling](#524-polling)
 
-[5.4.2 Off-CPU Analysis](#ch05.xhtml#ch05lev4sec2)
+[5.2.5 Concurrency and Parallelism](#525-concurrency-and-parallelism)
 
-[5.4.3 Syscall Analysis](#ch05.xhtml#ch05lev4sec3)
+[5.2.6 Non-Blocking I/O](#526-non-blocking-io)
 
-[5.4.4 USE Method](#ch05.xhtml#ch05lev4sec4)
+[5.2.7 Processor Binding](#527-processor-binding)
 
-[5.4.5 Thread State Analysis](#ch05.xhtml#ch05lev4sec5)
+[5.2.8 Performance Mantras](#528-performance-mantras)
 
-[5.4.6 Lock Analysis](#ch05.xhtml#ch05lev4sec6)
+[5.3 Programming Languages](#53-programming-languages)
 
-[5.4.7 Static Performance Tuning](#ch05.xhtml#ch05lev4sec7)
+[5.3.1 Compiled Languages](#531-compiled-languages)
 
-[5.4.8 Distributed Tracing](#ch05.xhtml#ch05lev4sec8)
+[5.3.2 Interpreted Languages](#532-interpreted-languages)
 
-[5.5 Observability Tools](#ch05.xhtml#ch05lev5)
+[5.3.3 Virtual Machines](#533-virtual-machines)
 
-[5.5.1 perf](#ch05.xhtml#ch05lev5sec1)
+[5.3.4 Garbage Collection](#534-garbage-collection)
 
-[5.5.2 profile](#ch05.xhtml#ch05lev5sec2)
+[5.4 Methodology](#54-methodology)
 
-[5.5.3 offcputime](#ch05.xhtml#ch05lev5sec3)
+[5.4.1 CPU Profiling](#541-cpu-profiling)
 
-[5.5.4 strace](#ch05.xhtml#ch05lev5sec4)
+[5.4.2 Off-CPU Analysis](#542-off-cpu-analysis)
 
-[5.5.5 execsnoop](#ch05.xhtml#ch05lev5sec5)
+[5.4.3 Syscall Analysis](#543-syscall-analysis)
 
-[5.5.6 syscount](#ch05.xhtml#ch05lev5sec6)
+[5.4.4 USE Method](#544-use-method)
 
-[5.5.7 bpftrace](#ch05.xhtml#ch05lev5sec7)
+[5.4.5 Thread State Analysis](#545-thread-state-analysis)
 
-[5.6 Gotchas](#ch05.xhtml#ch05lev6)
+[5.4.6 Lock Analysis](#546-lock-analysis)
 
-[5.6.1 Missing Symbols](#ch05.xhtml#ch05lev6sec1)
+[5.4.7 Static Performance Tuning](#547-static-performance-tuning)
 
-[5.6.2 Missing Stacks](#ch05.xhtml#ch05lev6sec2)
+[5.4.8 Distributed Tracing](#548-distributed-tracing)
 
-[5.7 Exercises](#ch05.xhtml#ch05lev7)
+[5.5 Observability Tools](#55-observability-tools)
 
-[5.8 References](#ch05.xhtml#ch05lev8)
+[5.5.1 perf](#551-perf)
 
-[**6 CPUs**](#ch06.xhtml#ch06)
+[5.5.2 profile](#552-profile)
 
-[6.1 Terminology](#ch06.xhtml#ch06lev1)
+[5.5.3 offcputime](#553-offcputime)
 
-[6.2 Models](#ch06.xhtml#ch06lev2)
+[5.5.4 strace](#554-strace)
 
-[6.2.1 CPU Architecture](#ch06.xhtml#ch06lev2sec1)
+[5.5.5 execsnoop](#555-execsnoop)
 
-[6.2.2 CPU Memory Caches](#ch06.xhtml#ch06lev2sec2)
+[5.5.6 syscount](#556-syscount)
 
-[6.2.3 CPU Run Queues](#ch06.xhtml#ch06lev2sec3)
+[5.5.7 bpftrace](#557-bpftrace)
 
-[6.3 Concepts](#ch06.xhtml#ch06lev3)
+[5.6 Gotchas](#56-gotchas)
 
-[6.3.1 Clock Rate](#ch06.xhtml#ch06lev3sec1)
+[5.6.1 Missing Symbols](#561-missing-symbols)
 
-[6.3.2 Instructions](#ch06.xhtml#ch06lev3sec2)
+[5.6.2 Missing Stacks](#562-missing-stacks)
 
-[6.3.3 Instruction Pipeline](#ch06.xhtml#ch06lev3sec3)
+[5.7 Exercises](#57-exercises)
 
-[6.3.4 Instruction Width](#ch06.xhtml#ch06lev3sec4)
+[5.8 References](#58-references)
 
-[6.3.5 Instruction Size](#ch06.xhtml#ch06lev3sec5)
+[**Chapter 6 - CPUs**](#chapter-6---cpus)
 
-[6.3.6 SMT](#ch06.xhtml#ch06lev3sec6)
+[6.1 Terminology](#61-terminology)
 
-[6.3.7 IPC, CPI](#ch06.xhtml#ch06lev3sec7)
+[6.2 Models](#62-models)
 
-[6.3.8 Utilization](#ch06.xhtml#ch06lev3sec8)
+[6.2.1 CPU Architecture](#621-cpu-architecture)
 
-[6.3.9 User Time/Kernel Time](#ch06.xhtml#ch06lev3sec9)
+[6.2.2 CPU Memory Caches](#622-cpu-memory-caches)
 
-[6.3.10 Saturation](#ch06.xhtml#ch06lev3sec10)
+[6.2.3 CPU Run Queues](#623-cpu-run-queues)
 
-[6.3.11 Preemption](#ch06.xhtml#ch06lev3sec11)
+[6.3 Concepts](#63-concepts)
 
-[6.3.12 Priority Inversion](#ch06.xhtml#ch06lev3sec12)
+[6.3.1 Clock Rate](#631-clock-rate)
 
-[6.3.13 Multiprocess, Multithreading](#ch06.xhtml#ch06lev3sec13)
+[6.3.2 Instructions](#632-instructions)
 
-[6.3.14 Word Size](#ch06.xhtml#ch06lev3sec14)
+[6.3.3 Instruction Pipeline](#633-instruction-pipeline)
 
-[6.3.15 Compiler Optimization](#ch06.xhtml#ch06lev3sec15)
+[6.3.4 Instruction Width](#634-instruction-width)
 
-[6.4 Architecture](#ch06.xhtml#ch06lev4)
+[6.3.5 Instruction Size](#635-instruction-size)
 
-[6.4.1 Hardware](#ch06.xhtml#ch06lev4sec1)
+[6.3.6 SMT](#636-smt)
 
-[6.4.2 Software](#ch06.xhtml#ch06lev4sec2)
+[6.3.7 IPC, CPI](#637-ipc-cpi)
 
-[6.5 Methodology](#ch06.xhtml#ch06lev5)
+[6.3.8 Utilization](#638-utilization)
 
-[6.5.1 Tools Method](#ch06.xhtml#ch06lev5sec1)
+[6.3.9 User Time/Kernel Time](#639-user-timekernel-time)
 
-[6.5.2 USE Method](#ch06.xhtml#ch06lev5sec2)
+[6.3.10 Saturation](#6310-saturation)
 
-[6.5.3 Workload Characterization](#ch06.xhtml#ch06lev5sec3)
+[6.3.11 Preemption](#6311-preemption)
 
-[6.5.4 Profiling](#ch06.xhtml#ch06lev5sec4)
+[6.3.12 Priority Inversion](#6312-priority-inversion)
 
-[6.5.5 Cycle Analysis](#ch06.xhtml#ch06lev5sec5)
+[6.3.13 Multiprocess, Multithreading](#6313-multiprocess-multithreading)
 
-[6.5.6 Performance Monitoring](#ch06.xhtml#ch06lev5sec6)
+[6.3.14 Word Size](#6314-word-size)
 
-[6.5.7 Static Performance Tuning](#ch06.xhtml#ch06lev5sec7)
+[6.3.15 Compiler Optimization](#6315-compiler-optimization)
 
-[6.5.8 Priority Tuning](#ch06.xhtml#ch06lev5sec8)
+[6.4 Architecture](#64-architecture)
 
-[6.5.9 Resource Controls](#ch06.xhtml#ch06lev5sec9)
+[6.4.1 Hardware](#641-hardware)
 
-[6.5.10 CPU Binding](#ch06.xhtml#ch06lev5sec10)
+[6.4.2 Software](#642-software)
 
-[6.5.11 Micro-Benchmarking](#ch06.xhtml#ch06lev5sec11)
+[6.5 Methodology](#65-methodology)
 
-[6.6 Observability Tools](#ch06.xhtml#ch06lev6)
+[6.5.1 Tools Method](#651-tools-method)
 
-[6.6.1 uptime](#ch06.xhtml#ch06lev6sec1)
+[6.5.2 USE Method](#652-use-method)
 
-[6.6.2 vmstat](#ch06.xhtml#ch06lev6sec2)
+[6.5.3 Workload Characterization](#653-workload-characterization)
 
-[6.6.3 mpstat](#ch06.xhtml#ch06lev6sec3)
+[6.5.4 Profiling](#654-profiling)
 
-[6.6.4 sar](#ch06.xhtml#ch06lev6sec4)
+[6.5.5 Cycle Analysis](#655-cycle-analysis)
 
-[6.6.5 ps](#ch06.xhtml#ch06lev6sec5)
+[6.5.6 Performance Monitoring](#656-performance-monitoring)
 
-[6.6.6 top](#ch06.xhtml#ch06lev6sec6)
+[6.5.7 Static Performance Tuning](#657-static-performance-tuning)
 
-[6.6.7 pidstat](#ch06.xhtml#ch06lev6sec7)
+[6.5.8 Priority Tuning](#658-priority-tuning)
 
-[6.6.8 time, ptime](#ch06.xhtml#ch06lev6sec8)
+[6.5.9 Resource Controls](#659-resource-controls)
 
-[6.6.9 turbostat](#ch06.xhtml#ch06lev6sec9)
+[6.5.10 CPU Binding](#6510-cpu-binding)
 
-[6.6.10 showboost](#ch06.xhtml#ch06lev6sec10)
+[6.5.11 Micro-Benchmarking](#6511-micro-benchmarking)
 
-[6.6.11 pmcarch](#ch06.xhtml#ch06lev6sec11)
+[6.6 Observability Tools](#66-observability-tools)
 
-[6.6.12 tlbstat](#ch06.xhtml#ch06lev6sec12)
+[6.6.1 uptime](#661-uptime)
 
-[6.6.13 perf](#ch06.xhtml#ch06lev6sec13)
+[6.6.2 vmstat](#662-vmstat)
 
-[6.6.14 profile](#ch06.xhtml#ch06lev6sec14)
+[6.6.3 mpstat](#663-mpstat)
 
-[6.6.15 cpudist](#ch06.xhtml#ch06lev6sec15)
+[6.6.4 sar](#664-sar)
 
-[6.6.16 runqlat](#ch06.xhtml#ch06lev6sec16)
+[6.6.5 ps](#665-ps)
 
-[6.6.17 runqlen](#ch06.xhtml#ch06lev6sec17)
+[6.6.6 top](#666-top)
 
-[6.6.18 softirqs](#ch06.xhtml#ch06lev6sec18)
+[6.6.7 pidstat](#667-pidstat)
 
-[6.6.19 hardirqs](#ch06.xhtml#ch06lev6sec19)
+[6.6.8 time, ptime](#668-time-ptime)
 
-[6.6.20 bpftrace](#ch06.xhtml#ch06lev6sec20)
+[6.6.9 turbostat](#669-turbostat)
 
-[6.6.21 Other Tools](#ch06.xhtml#ch06lev6sec21)
+[6.6.10 showboost](#6610-showboost)
 
-[6.7 Visualizations](#ch06.xhtml#ch06lev7)
+[6.6.11 pmcarch](#6611-pmcarch)
 
-[6.7.1 Utilization Heat Map](#ch06.xhtml#ch06lev7sec1)
+[6.6.12 tlbstat](#6612-tlbstat)
 
-[6.7.2 Subsecond-Offset Heat Map](#ch06.xhtml#ch06lev7sec2)
+[6.6.13 perf](#6613-perf)
 
-[6.7.3 Flame Graphs](#ch06.xhtml#ch06lev7sec3)
+[6.6.14 profile](#6614-profile)
 
-[6.7.4 FlameScope](#ch06.xhtml#ch06lev7sec4)
+[6.6.15 cpudist](#6615-cpudist)
 
-[6.8 Experimentation](#ch06.xhtml#ch06lev8)
+[6.6.16 runqlat](#6616-runqlat)
 
-[6.8.1 Ad Hoc](#ch06.xhtml#ch06lev8sec1)
+[6.6.17 runqlen](#6617-runqlen)
 
-[6.8.2 SysBench](#ch06.xhtml#ch06lev8sec2)
+[6.6.18 softirqs](#6618-softirqs)
 
-[6.9 Tuning](#ch06.xhtml#ch06lev9)
+[6.6.19 hardirqs](#6619-hardirqs)
 
-[6.9.1 Compiler Options](#ch06.xhtml#ch06lev9sec1)
+[6.6.20 bpftrace](#6620-bpftrace)
 
-[6.9.2 Scheduling Priority and Class](#ch06.xhtml#ch06lev9sec2)
+[6.6.21 Other Tools](#6621-other-tools)
 
-[6.9.3 Scheduler Options](#ch06.xhtml#ch06lev9sec3)
+[6.7 Visualizations](#67-visualizations)
 
-[6.9.4 Scaling Governors](#ch06.xhtml#ch06lev9sec4)
+[6.7.1 Utilization Heat Map](#671-utilization-heat-map)
 
-[6.9.5 Power States](#ch06.xhtml#ch06lev9sec5)
+[6.7.2 Subsecond-Offset Heat Map](#672-subsecond-offset-heat-map)
 
-[6.9.6 CPU Binding](#ch06.xhtml#ch06lev9sec6)
+[6.7.3 Flame Graphs](#673-flame-graphs)
 
-[6.9.7 Exclusive CPU Sets](#ch06.xhtml#ch06lev9sec7)
+[6.7.4 FlameScope](#674-flamescope)
 
-[6.9.8 Resource Controls](#ch06.xhtml#ch06lev9sec8)
+[6.8 Experimentation](#68-experimentation)
 
-[6.9.9 Security Boot Options](#ch06.xhtml#ch06lev9sec9)
+[6.8.1 Ad Hoc](#681-ad-hoc)
 
-[6.9.10 Processor Options (BIOS Tuning)](#ch06.xhtml#ch06lev9sec10)
+[6.8.2 SysBench](#682-sysbench)
 
-[6.10 Exercises](#ch06.xhtml#ch06lev10)
+[6.9 Tuning](#69-tuning)
 
-[6.11 References](#ch06.xhtml#ch06lev11)
+[6.9.1 Compiler Options](#691-compiler-options)
 
-[**7 Memory**](#ch07.xhtml#ch07)
+[6.9.2 Scheduling Priority and Class](#692-scheduling-priority-and-class)
 
-[7.1 Terminology](#ch07.xhtml#ch07lev1)
+[6.9.3 Scheduler Options](#693-scheduler-options)
 
-[7.2 Concepts](#ch07.xhtml#ch07lev2)
+[6.9.4 Scaling Governors](#694-scaling-governors)
 
-[7.2.1 Virtual Memory](#ch07.xhtml#ch07lev2sec1)
+[6.9.5 Power States](#695-power-states)
 
-[7.2.2 Paging](#ch07.xhtml#ch07lev2sec2)
+[6.9.6 CPU Binding](#696-cpu-binding)
 
-[7.2.3 Demand Paging](#ch07.xhtml#ch07lev2sec3)
+[6.9.7 Exclusive CPU Sets](#697-exclusive-cpu-sets)
 
-[7.2.4 Overcommit](#ch07.xhtml#ch07lev2sec4)
+[6.9.8 Resource Controls](#698-resource-controls)
 
-[7.2.5 Process Swapping](#ch07.xhtml#ch07lev2sec5)
+[6.9.9 Security Boot Options](#699-security-boot-options)
 
-[7.2.6 File System Cache Usage](#ch07.xhtml#ch07lev2sec6)
+[6.9.10 Processor Options (BIOS Tuning)](#6910-processor-options-bios-tuning)
 
-[7.2.7 Utilization and Saturation](#ch07.xhtml#ch07lev2sec7)
+[6.10 Exercises](#610-exercises)
 
-[7.2.8 Allocators](#ch07.xhtml#ch07lev2sec8)
+[6.11 References](#611-references)
 
-[7.2.9 Shared Memory](#ch07.xhtml#ch07lev2sec9)
+[**Chapter 7 - Memory**](#chapter-7---memory)
 
-[7.2.10 Working Set Size](#ch07.xhtml#ch07lev2sec10)
+[7.1 Terminology](#71-terminology)
 
-[7.2.11 Word Size](#ch07.xhtml#ch07lev2sec11)
+[7.2 Concepts](#72-concepts)
 
-[7.3 Architecture](#ch07.xhtml#ch07lev3)
+[7.2.1 Virtual Memory](#721-virtual-memory)
 
-[7.3.1 Hardware](#ch07.xhtml#ch07lev3sec1)
+[7.2.2 Paging](#722-paging)
 
-[7.3.2 Software](#ch07.xhtml#ch07lev3sec2)
+[7.2.3 Demand Paging](#723-demand-paging)
 
-[7.3.3 Process Virtual Address Space](#ch07.xhtml#ch07lev3sec3)
+[7.2.4 Overcommit](#724-overcommit)
 
-[7.4 Methodology](#ch07.xhtml#ch07lev4)
+[7.2.5 Process Swapping](#725-process-swapping)
 
-[7.4.1 Tools Method](#ch07.xhtml#ch07lev4sec1)
+[7.2.6 File System Cache Usage](#726-file-system-cache-usage)
 
-[7.4.2 USE Method](#ch07.xhtml#ch07lev4sec2)
+[7.2.7 Utilization and Saturation](#727-utilization-and-saturation)
 
-[7.4.3 Characterizing Usage](#ch07.xhtml#ch07lev4sec3)
+[7.2.8 Allocators](#728-allocators)
 
-[7.4.4 Cycle Analysis](#ch07.xhtml#ch07lev4sec4)
+[7.2.9 Shared Memory](#729-shared-memory)
 
-[7.4.5 Performance Monitoring](#ch07.xhtml#ch07lev4sec5)
+[7.2.10 Working Set Size](#7210-working-set-size)
 
-[7.4.6 Leak Detection](#ch07.xhtml#ch07lev4sec6)
+[7.2.11 Word Size](#7211-word-size)
 
-[7.4.7 Static Performance Tuning](#ch07.xhtml#ch07lev4sec7)
+[7.3 Architecture](#73-architecture)
 
-[7.4.8 Resource Controls](#ch07.xhtml#ch07lev4sec8)
+[7.3.1 Hardware](#731-hardware)
 
-[7.4.9 Micro-Benchmarking](#ch07.xhtml#ch07lev4sec9)
+[7.3.2 Software](#732-software)
 
-[7.4.10 Memory Shrinking](#ch07.xhtml#ch07lev4sec10)
+[7.3.3 Process Virtual Address Space](#733-process-virtual-address-space)
 
-[7.5 Observability Tools](#ch07.xhtml#ch07lev5)
+[7.4 Methodology](#74-methodology)
 
-[7.5.1 vmstat](#ch07.xhtml#ch07lev5sec1)
+[7.4.1 Tools Method](#741-tools-method)
 
-[7.5.2 PSI](#ch07.xhtml#ch07lev5sec2)
+[7.4.2 USE Method](#742-use-method)
 
-[7.5.3 swapon](#ch07.xhtml#ch07lev5sec3)
+[7.4.3 Characterizing Usage](#743-characterizing-usage)
 
-[7.5.4 sar](#ch07.xhtml#ch07lev5sec4)
+[7.4.4 Cycle Analysis](#744-cycle-analysis)
 
-[7.5.5 slabtop](#ch07.xhtml#ch07lev5sec5)
+[7.4.5 Performance Monitoring](#745-performance-monitoring)
 
-[7.5.6 numastat](#ch07.xhtml#ch07lev5sec6)
+[7.4.6 Leak Detection](#746-leak-detection)
 
-[7.5.7 ps](#ch07.xhtml#ch07lev5sec7)
+[7.4.7 Static Performance Tuning](#747-static-performance-tuning)
 
-[7.5.8 top](#ch07.xhtml#ch07lev5sec8)
+[7.4.8 Resource Controls](#748-resource-controls)
 
-[7.5.9 pmap](#ch07.xhtml#ch07lev5sec9)
+[7.4.9 Micro-Benchmarking](#749-micro-benchmarking)
 
-[7.5.10 perf](#ch07.xhtml#ch07lev5sec10)
+[7.4.10 Memory Shrinking](#7410-memory-shrinking)
 
-[7.5.11 drsnoop](#ch07.xhtml#ch07lev5sec11)
+[7.5 Observability Tools](#75-observability-tools)
 
-[7.5.12 wss](#ch07.xhtml#ch07lev5sec12)
+[7.5.1 vmstat](#751-vmstat)
 
-[7.5.13 bpftrace](#ch07.xhtml#ch07lev5sec13)
+[7.5.2 PSI](#752-psi)
 
-[7.5.14 Other Tools](#ch07.xhtml#ch07lev5sec14)
+[7.5.3 swapon](#753-swapon)
 
-[7.6 Tuning](#ch07.xhtml#ch07lev6)
+[7.5.4 sar](#754-sar)
 
-[7.6.1 Tunable Parameters](#ch07.xhtml#ch07lev6sec1)
+[7.5.5 slabtop](#755-slabtop)
 
-[7.6.2 Multiple Page Sizes](#ch07.xhtml#ch07lev6sec2)
+[7.5.6 numastat](#756-numastat)
 
-[7.6.3 Allocators](#ch07.xhtml#ch07lev6sec3)
+[7.5.7 ps](#757-ps)
 
-[7.6.4 NUMA Binding](#ch07.xhtml#ch07lev6sec4)
+[7.5.8 top](#758-top)
 
-[7.6.5 Resource Controls](#ch07.xhtml#ch07lev6sec5)
+[7.5.9 pmap](#759-pmap)
 
-[7.7 Exercises](#ch07.xhtml#ch07lev7)
+[7.5.10 perf](#7510-perf)
 
-[7.8 References](#ch07.xhtml#ch07lev8)
+[7.5.11 drsnoop](#7511-drsnoop)
 
-[**8 File Systems**](#ch08.xhtml#ch08)
+[7.5.12 wss](#7512-wss)
 
-[8.1 Terminology](#ch08.xhtml#ch08lev1)
+[7.5.13 bpftrace](#7513-bpftrace)
 
-[8.2 Models](#ch08.xhtml#ch08lev2)
+[7.5.14 Other Tools](#7514-other-tools)
 
-[8.2.1 File System Interfaces](#ch08.xhtml#ch08lev2sec1)
+[7.6 Tuning](#76-tuning)
 
-[8.2.2 File System Cache](#ch08.xhtml#ch08lev2sec2)
+[7.6.1 Tunable Parameters](#761-tunable-parameters)
 
-[8.2.3 Second-Level Cache](#ch08.xhtml#ch08lev2sec3)
+[7.6.2 Multiple Page Sizes](#762-multiple-page-sizes)
 
-[8.3 Concepts](#ch08.xhtml#ch08lev3)
+[7.6.3 Allocators](#763-allocators)
 
-[8.3.1 File System Latency](#ch08.xhtml#ch08lev3sec1)
+[7.6.4 NUMA Binding](#764-numa-binding)
 
-[8.3.2 Caching](#ch08.xhtml#ch08lev3sec2)
+[7.6.5 Resource Controls](#765-resource-controls)
 
-[8.3.3 Random vs. Sequential I/O](#ch08.xhtml#ch08lev3sec3)
+[7.7 Exercises](#77-exercises)
 
-[8.3.4 Prefetch](#ch08.xhtml#ch08lev3sec4)
+[7.8 References](#78-references)
 
-[8.3.5 Read-Ahead](#ch08.xhtml#ch08lev3sec5)
+[**Chapter 8 - File Systems**](#chapter-8---file-systems)
 
-[8.3.6 Write-Back Caching](#ch08.xhtml#ch08lev3sec6)
+[8.1 Terminology](#81-terminology)
 
-[8.3.7 Synchronous Writes](#ch08.xhtml#ch08lev3sec7)
+[8.2 Models](#82-models)
 
-[8.3.8 Raw and Direct I/O](#ch08.xhtml#ch08lev3sec8)
+[8.2.1 File System Interfaces](#821-file-system-interfaces)
 
-[8.3.9 Non-Blocking I/O](#ch08.xhtml#ch08lev3sec9)
+[8.2.2 File System Cache](#822-file-system-cache)
 
-[8.3.10 Memory-Mapped Files](#ch08.xhtml#ch08lev3sec10)
+[8.2.3 Second-Level Cache](#823-second-level-cache)
 
-[8.3.11 Metadata](#ch08.xhtml#ch08lev3sec11)
+[8.3 Concepts](#83-concepts)
 
-[8.3.12 Logical vs. Physical I/O](#ch08.xhtml#ch08lev3sec12)
+[8.3.1 File System Latency](#831-file-system-latency)
 
-[8.3.13 Operations Are Not Equal](#ch08.xhtml#ch08lev3sec13)
+[8.3.2 Caching](#832-caching)
 
-[8.3.14 Special File Systems](#ch08.xhtml#ch08lev3sec14)
+[8.3.3 Random vs. Sequential I/O](#833-random-vs-sequential-io)
 
-[8.3.15 Access Timestamps](#ch08.xhtml#ch08lev3sec15)
+[8.3.4 Prefetch](#834-prefetch)
 
-[8.3.16 Capacity](#ch08.xhtml#ch08lev3sec16)
+[8.3.5 Read-Ahead](#835-read-ahead)
 
-[8.4 Architecture](#ch08.xhtml#ch08lev4)
+[8.3.6 Write-Back Caching](#836-write-back-caching)
 
-[8.4.1 File System I/O Stack](#ch08.xhtml#ch08lev4sec1)
+[8.3.7 Synchronous Writes](#837-synchronous-writes)
 
-[8.4.2 VFS](#ch08.xhtml#ch08lev4sec2)
+[8.3.8 Raw and Direct I/O](#838-raw-and-direct-io)
 
-[8.4.3 File System Caches](#ch08.xhtml#ch08lev4sec3)
+[8.3.9 Non-Blocking I/O](#839-non-blocking-io)
 
-[8.4.4 File System Features](#ch08.xhtml#ch08lev4sec4)
+[8.3.10 Memory-Mapped Files](#8310-memory-mapped-files)
 
-[8.4.5 File System Types](#ch08.xhtml#ch08lev4sec5)
+[8.3.11 Metadata](#8311-metadata)
 
-[8.4.6 Volumes and Pools](#ch08.xhtml#ch08lev4sec6)
+[8.3.12 Logical vs. Physical I/O](#8312-logical-vs-physical-io)
 
-[8.5 Methodology](#ch08.xhtml#ch08lev5)
+[8.3.13 Operations Are Not Equal](#8313-operations-are-not-equal)
 
-[8.5.1 Disk Analysis](#ch08.xhtml#ch08lev5sec1)
+[8.3.14 Special File Systems](#8314-special-file-systems)
 
-[8.5.2 Latency Analysis](#ch08.xhtml#ch08lev5sec2)
+[8.3.15 Access Timestamps](#8315-access-timestamps)
 
-[8.5.3 Workload Characterization](#ch08.xhtml#ch08lev5sec3)
+[8.3.16 Capacity](#8316-capacity)
 
-[8.5.4 Performance Monitoring](#ch08.xhtml#ch08lev5sec4)
+[8.4 Architecture](#84-architecture)
 
-[8.5.5 Static Performance Tuning](#ch08.xhtml#ch08lev5sec5)
+[8.4.1 File System I/O Stack](#841-file-system-io-stack)
 
-[8.5.6 Cache Tuning](#ch08.xhtml#ch08lev5sec6)
+[8.4.2 VFS](#842-vfs)
 
-[8.5.7 Workload Separation](#ch08.xhtml#ch08lev5sec7)
+[8.4.3 File System Caches](#843-file-system-caches)
 
-[8.5.8 Micro-Benchmarking](#ch08.xhtml#ch08lev5sec8)
+[8.4.4 File System Features](#844-file-system-features)
 
-[8.6 Observability Tools](#ch08.xhtml#ch08lev6)
+[8.4.5 File System Types](#845-file-system-types)
 
-[8.6.1 mount](#ch08.xhtml#ch08lev6sec1)
+[8.4.6 Volumes and Pools](#846-volumes-and-pools)
 
-[8.6.2 free](#ch08.xhtml#ch08lev6sec2)
+[8.5 Methodology](#85-methodology)
 
-[8.6.3 top](#ch08.xhtml#ch08lev6sec3)
+[8.5.1 Disk Analysis](#851-disk-analysis)
 
-[8.6.4 vmstat](#ch08.xhtml#ch08lev6sec4)
+[8.5.2 Latency Analysis](#852-latency-analysis)
 
-[8.6.5 sar](#ch08.xhtml#ch08lev6sec5)
+[8.5.3 Workload Characterization](#853-workload-characterization)
 
-[8.6.6 slabtop](#ch08.xhtml#ch08lev6sec6)
+[8.5.4 Performance Monitoring](#854-performance-monitoring)
 
-[8.6.7 strace](#ch08.xhtml#ch08lev6sec7)
+[8.5.5 Static Performance Tuning](#855-static-performance-tuning)
 
-[8.6.8 fatrace](#ch08.xhtml#ch08lev6sec8)
+[8.5.6 Cache Tuning](#856-cache-tuning)
 
-[8.6.9 LatencyTOP](#ch08.xhtml#ch08lev6sec9)
+[8.5.7 Workload Separation](#857-workload-separation)
 
-[8.6.10 opensnoop](#ch08.xhtml#ch08lev6sec10)
+[8.5.8 Micro-Benchmarking](#858-micro-benchmarking)
 
-[8.6.11 filetop](#ch08.xhtml#ch08lev6sec11)
+[8.6 Observability Tools](#86-observability-tools)
 
-[8.6.12 cachestat](#ch08.xhtml#ch08lev6sec12)
+[8.6.1 mount](#861-mount)
 
-[8.6.13 ext4dist (xfs, zfs, btrfs, nfs)](#ch08.xhtml#ch08lev6sec13)
+[8.6.2 free](#862-free)
 
-[8.6.14 ext4slower (xfs, zfs, btrfs, nfs)](#ch08.xhtml#ch08lev6sec14)
+[8.6.3 top](#863-top)
 
-[8.6.15 bpftrace](#ch08.xhtml#ch08lev6sec15)
+[8.6.4 vmstat](#864-vmstat)
 
-[8.6.17 Other Tools](#ch08.xhtml#ch08lev6sec17)
+[8.6.5 sar](#865-sar)
 
-[8.6.18 Visualizations](#ch08.xhtml#ch08lev6sec18)
+[8.6.6 slabtop](#866-slabtop)
 
-[8.7 Experimentation](#ch08.xhtml#ch08lev7)
+[8.6.7 strace](#867-strace)
 
-[8.7.1 Ad Hoc](#ch08.xhtml#ch08lev7sec1)
+[8.6.8 fatrace](#868-fatrace)
 
-[8.7.2 Micro-Benchmark Tools](#ch08.xhtml#ch08lev7sec2)
+[8.6.9 LatencyTOP](#869-latencytop)
 
-[8.7.3 Cache Flushing](#ch08.xhtml#ch08lev7sec3)
+[8.6.10 opensnoop](#8610-opensnoop)
 
-[8.8 Tuning](#ch08.xhtml#ch08lev8)
+[8.6.11 filetop](#8611-filetop)
 
-[8.8.1 Application Calls](#ch08.xhtml#ch08lev8sec1)
+[8.6.12 cachestat](#8612-cachestat)
 
-[8.8.2 ext4](#ch08.xhtml#ch08lev8sec2)
+[8.6.13 ext4dist (xfs, zfs, btrfs, nfs)](#8613-ext4dist-xfs-zfs-btrfs-nfs)
 
-[8.8.3 ZFS](#ch08.xhtml#ch08lev8sec3)
+[8.6.14 ext4slower (xfs, zfs, btrfs, nfs)](#8614-ext4slower-xfs-zfs-btrfs-nfs)
 
-[8.9 Exercises](#ch08.xhtml#ch08lev9)
+[8.6.15 bpftrace](#8615-bpftrace)
 
-[8.10 References](#ch08.xhtml#ch08lev10)
+[8.6.17 Other Tools](#8617-other-tools)
 
-[**9 Disks**](#ch09.xhtml#ch09)
+[8.6.18 Visualizations](#8618-visualizations)
 
-[9.1 Terminology](#ch09.xhtml#ch09lev1)
+[8.7 Experimentation](#87-experimentation)
 
-[9.2 Models](#ch09.xhtml#ch09lev2)
+[8.7.1 Ad Hoc](#871-ad-hoc)
 
-[9.2.1 Simple Disk](#ch09.xhtml#ch09lev2sec1)
+[8.7.2 Micro-Benchmark Tools](#872-micro-benchmark-tools)
 
-[9.2.2 Caching Disk](#ch09.xhtml#ch09lev2sec2)
+[8.7.3 Cache Flushing](#873-cache-flushing)
 
-[9.2.3 Controller](#ch09.xhtml#ch09lev2sec3)
+[8.8 Tuning](#88-tuning)
 
-[9.3 Concepts](#ch09.xhtml#ch09lev3)
+[8.8.1 Application Calls](#881-application-calls)
 
-[9.3.1 Measuring Time](#ch09.xhtml#ch09lev3sec1)
+[8.8.2 ext4](#882-ext4)
 
-[9.3.2 Time Scales](#ch09.xhtml#ch09lev3sec2)
+[8.8.3 ZFS](#883-zfs)
 
-[9.3.3 Caching](#ch09.xhtml#ch09lev3sec3)
+[8.9 Exercises](#89-exercises)
 
-[9.3.4 Random vs. Sequential I/O](#ch09.xhtml#ch09lev3sec4)
+[8.10 References](#810-references)
 
-[9.3.5 Read/Write Ratio](#ch09.xhtml#ch09lev3sec5)
+[**Chapter 9 - Disks**](#chapter-9---disks)
 
-[9.3.6 I/O Size](#ch09.xhtml#ch09lev3sec6)
+[9.1 Terminology](#91-terminology)
 
-[9.3.7 IOPS Are Not Equal](#ch09.xhtml#ch09lev3sec7)
+[9.2 Models](#92-models)
 
-[9.3.8 Non-Data-Transfer Disk Commands](#ch09.xhtml#ch09lev3sec8)
+[9.2.1 Simple Disk](#921-simple-disk)
 
-[9.3.9 Utilization](#ch09.xhtml#ch09lev3sec9)
+[9.2.2 Caching Disk](#922-caching-disk)
 
-[9.3.10 Saturation](#ch09.xhtml#ch09lev3sec10)
+[9.2.3 Controller](#923-controller)
 
-[9.3.11 I/O Wait](#ch09.xhtml#ch09lev3sec11)
+[9.3 Concepts](#93-concepts)
 
-[9.3.12 Synchronous vs. Asynchronous](#ch09.xhtml#ch09lev3sec12)
+[9.3.1 Measuring Time](#931-measuring-time)
 
-[9.3.13 Disk vs. Application I/O](#ch09.xhtml#ch09lev3sec13)
+[9.3.2 Time Scales](#932-time-scales)
 
-[9.4 Architecture](#ch09.xhtml#ch09lev4)
+[9.3.3 Caching](#933-caching)
 
-[9.4.1 Disk Types](#ch09.xhtml#ch09lev4sec1)
+[9.3.4 Random vs. Sequential I/O](#934-random-vs-sequential-io)
 
-[9.4.2 Interfaces](#ch09.xhtml#ch09lev4sec2)
+[9.3.5 Read/Write Ratio](#935-readwrite-ratio)
 
-[9.4.3 Storage Types](#ch09.xhtml#ch09lev4sec3)
+[9.3.6 I/O Size](#936-io-size)
 
-[9.4.4 Operating System Disk I/O Stack](#ch09.xhtml#ch09lev4sec4)
+[9.3.7 IOPS Are Not Equal](#937-iops-are-not-equal)
 
-[9.5 Methodology](#ch09.xhtml#ch09lev5)
+[9.3.8 Non-Data-Transfer Disk Commands](#938-non-data-transfer-disk-commands)
 
-[9.5.1 Tools Method](#ch09.xhtml#ch09lev5sec1)
+[9.3.9 Utilization](#939-utilization)
 
-[9.5.2 USE Method](#ch09.xhtml#ch09lev5sec2)
+[9.3.10 Saturation](#9310-saturation)
 
-[9.5.3 Performance Monitoring](#ch09.xhtml#ch09lev5sec3)
+[9.3.11 I/O Wait](#9311-io-wait)
 
-[9.5.4 Workload Characterization](#ch09.xhtml#ch09lev5sec4)
+[9.3.12 Synchronous vs. Asynchronous](#9312-synchronous-vs-asynchronous)
 
-[9.5.5 Latency Analysis](#ch09.xhtml#ch09lev5sec5)
+[9.3.13 Disk vs. Application I/O](#9313-disk-vs-application-io)
 
-[9.5.6 Static Performance Tuning](#ch09.xhtml#ch09lev5sec6)
+[9.4 Architecture](#94-architecture)
 
-[9.5.7 Cache Tuning](#ch09.xhtml#ch09lev5sec7)
+[9.4.1 Disk Types](#941-disk-types)
 
-[9.5.8 Resource Controls](#ch09.xhtml#ch09lev5sec8)
+[9.4.2 Interfaces](#942-interfaces)
 
-[9.5.9 Micro-Benchmarking](#ch09.xhtml#ch09lev5sec9)
+[9.4.3 Storage Types](#943-storage-types)
 
-[9.5.10 Scaling](#ch09.xhtml#ch09lev5sec10)
+[9.4.4 Operating System Disk I/O Stack](#944-operating-system-disk-io-stack)
 
-[9.6 Observability Tools](#ch09.xhtml#ch09lev6)
+[9.5 Methodology](#95-methodology)
 
-[9.6.1 iostat](#ch09.xhtml#ch09lev6sec1)
+[9.5.1 Tools Method](#951-tools-method)
 
-[9.6.2 sar](#ch09.xhtml#ch09lev6sec2)
+[9.5.2 USE Method](#952-use-method)
 
-[9.6.3 PSI](#ch09.xhtml#ch09lev6sec3)
+[9.5.3 Performance Monitoring](#953-performance-monitoring)
 
-[9.6.4 pidstat](#ch09.xhtml#ch09lev6sec4)
+[9.5.4 Workload Characterization](#954-workload-characterization)
 
-[9.6.5 perf](#ch09.xhtml#ch09lev6sec5)
+[9.5.5 Latency Analysis](#955-latency-analysis)
 
-[9.6.6 biolatency](#ch09.xhtml#ch09lev6sec6)
+[9.5.6 Static Performance Tuning](#956-static-performance-tuning)
 
-[9.6.7 biosnoop](#ch09.xhtml#ch09lev6sec7)
+[9.5.7 Cache Tuning](#957-cache-tuning)
 
-[9.6.8 iotop, biotop](#ch09.xhtml#ch09lev6sec8)
+[9.5.8 Resource Controls](#958-resource-controls)
 
-[9.6.9 biostacks](#ch09.xhtml#ch09lev6sec9)
+[9.5.9 Micro-Benchmarking](#959-micro-benchmarking)
 
-[9.6.10 blktrace](#ch09.xhtml#ch09lev6sec10)
+[9.5.10 Scaling](#9510-scaling)
 
-[9.6.11 bpftrace](#ch09.xhtml#ch09lev6sec11)
+[9.6 Observability Tools](#96-observability-tools)
 
-[9.6.12 MegaCli](#ch09.xhtml#ch09lev6sec12)
+[9.6.1 iostat](#961-iostat)
 
-[9.6.13 smartctl](#ch09.xhtml#ch09lev6sec13)
+[9.6.2 sar](#962-sar)
 
-[9.6.14 SCSI Logging](#ch09.xhtml#ch09lev6sec14)
+[9.6.3 PSI](#963-psi)
 
-[9.6.15 Other Tools](#ch09.xhtml#ch09lev6sec15)
+[9.6.4 pidstat](#964-pidstat)
 
-[9.7 Visualizations](#ch09.xhtml#ch09lev7)
+[9.6.5 perf](#965-perf)
 
-[9.7.1 Line Graphs](#ch09.xhtml#ch09lev7sec1)
+[9.6.6 biolatency](#966-biolatency)
 
-[9.7.2 Latency Scatter Plots](#ch09.xhtml#ch09lev7sec2)
+[9.6.7 biosnoop](#967-biosnoop)
 
-[9.7.3 Latency Heat Maps](#ch09.xhtml#ch09lev7sec3)
+[9.6.8 iotop, biotop](#968-iotop-biotop)
 
-[9.7.4 Offset Heat Maps](#ch09.xhtml#ch09lev7sec4)
+[9.6.9 biostacks](#969-biostacks)
 
-[9.7.5 Utilization Heat Maps](#ch09.xhtml#ch09lev7sec5)
+[9.6.10 blktrace](#9610-blktrace)
 
-[9.8 Experimentation](#ch09.xhtml#ch09lev8)
+[9.6.11 bpftrace](#9611-bpftrace)
 
-[9.8.1 Ad Hoc](#ch09.xhtml#ch09lev8sec1)
+[9.6.12 MegaCli](#9612-megacli)
 
-[9.8.2 Custom Load Generators](#ch09.xhtml#ch09lev8sec2)
+[9.6.13 smartctl](#9613-smartctl)
 
-[9.8.3 Micro-Benchmark Tools](#ch09.xhtml#ch09lev8sec3)
+[9.6.14 SCSI Logging](#9614-scsi-logging)
 
-[9.8.4 Random Read Example](#ch09.xhtml#ch09lev8sec4)
+[9.6.15 Other Tools](#9615-other-tools)
 
-[9.8.5 ioping](#ch09.xhtml#ch09lev8sec5)
+[9.7 Visualizations](#97-visualizations)
 
-[9.8.6 fio](#ch09.xhtml#ch09lev8sec6)
+[9.7.1 Line Graphs](#971-line-graphs)
 
-[9.8.7 blkreplay](#ch09.xhtml#ch09lev8sec7)
+[9.7.2 Latency Scatter Plots](#972-latency-scatter-plots)
 
-[9.9 Tuning](#ch09.xhtml#ch09lev9)
+[9.7.3 Latency Heat Maps](#973-latency-heat-maps)
 
-[9.9.1 Operating System Tunables](#ch09.xhtml#ch09lev9sec1)
+[9.7.4 Offset Heat Maps](#974-offset-heat-maps)
 
-[9.9.2 Disk Device Tunables](#ch09.xhtml#ch09lev9sec2)
+[9.7.5 Utilization Heat Maps](#975-utilization-heat-maps)
 
-[9.9.3 Disk Controller Tunables](#ch09.xhtml#ch09lev9sec3)
+[9.8 Experimentation](#98-experimentation)
 
-[9.10 Exercises](#ch09.xhtml#ch09lev10)
+[9.8.1 Ad Hoc](#981-ad-hoc)
 
-[9.11 References](#ch09.xhtml#ch09lev11)
+[9.8.2 Custom Load Generators](#982-custom-load-generators)
 
-[**10 Network**](#ch10.xhtml#ch10)
+[9.8.3 Micro-Benchmark Tools](#983-micro-benchmark-tools)
 
-[10.1 Terminology](#ch10.xhtml#ch10lev1)
+[9.8.4 Random Read Example](#984-random-read-example)
 
-[10.2 Models](#ch10.xhtml#ch10lev2)
+[9.8.5 ioping](#985-ioping)
 
-[10.2.1 Network Interface](#ch10.xhtml#ch10lev2sec1)
+[9.8.6 fio](#986-fio)
 
-[10.2.2 Controller](#ch10.xhtml#ch10lev2sec2)
+[9.8.7 blkreplay](#987-blkreplay)
 
-[10.2.3 Protocol Stack](#ch10.xhtml#ch10lev2sec3)
+[9.9 Tuning](#99-tuning)
 
-[10.3 Concepts](#ch10.xhtml#ch10lev3)
+[9.9.1 Operating System Tunables](#991-operating-system-tunables)
 
-[10.3.1 Networks and Routing](#ch10.xhtml#ch10lev3sec1)
+[9.9.2 Disk Device Tunables](#992-disk-device-tunables)
 
-[10.3.2 Protocols](#ch10.xhtml#ch10lev3sec2)
+[9.9.3 Disk Controller Tunables](#993-disk-controller-tunables)
 
-[10.3.3 Encapsulation](#ch10.xhtml#ch10lev3sec3)
+[9.10 Exercises](#910-exercises)
 
-[10.3.4 Packet Size](#ch10.xhtml#ch10lev3sec4)
+[9.11 References](#911-references)
 
-[10.3.5 Latency](#ch10.xhtml#ch10lev3sec5)
+[**Chapter 10 - Network**](#chapter-10---network)
 
-[10.3.6 Buffering](#ch10.xhtml#ch10lev3sec6)
+[10.1 Terminology](#101-terminology)
 
-[10.3.7 Connection Backlog](#ch10.xhtml#ch10lev3sec7)
+[10.2 Models](#102-models)
 
-[10.3.8 Interface Negotiation](#ch10.xhtml#ch10lev3sec8)
+[10.2.1 Network Interface](#1021-network-interface)
 
-[10.3.9 Congestion Avoidance](#ch10.xhtml#ch10lev3sec9)
+[10.2.2 Controller](#1022-controller)
 
-[10.3.10 Utilization](#ch10.xhtml#ch10lev3sec10)
+[10.2.3 Protocol Stack](#1023-protocol-stack)
 
-[10.3.11 Local Connections](#ch10.xhtml#ch10lev3sec11)
+[10.3 Concepts](#103-concepts)
 
-[10.4 Architecture](#ch10.xhtml#ch10lev4)
+[10.3.1 Networks and Routing](#1031-networks-and-routing)
 
-[10.4.1 Protocols](#ch10.xhtml#ch10lev4sec1)
+[10.3.2 Protocols](#1032-protocols)
 
-[10.4.2 Hardware](#ch10.xhtml#ch10lev4sec2)
+[10.3.3 Encapsulation](#1033-encapsulation)
 
-[10.4.3 Software](#ch10.xhtml#ch10lev4sec3)
+[10.3.4 Packet Size](#1034-packet-size)
 
-[10.5 Methodology](#ch10.xhtml#ch10lev5)
+[10.3.5 Latency](#1035-latency)
 
-[10.5.1 Tools Method](#ch10.xhtml#ch10lev5sec1)
+[10.3.6 Buffering](#1036-buffering)
 
-[10.5.2 USE Method](#ch10.xhtml#ch10lev5sec2)
+[10.3.7 Connection Backlog](#1037-connection-backlog)
 
-[10.5.3 Workload Characterization](#ch10.xhtml#ch10lev5sec3)
+[10.3.8 Interface Negotiation](#1038-interface-negotiation)
 
-[10.5.4 Latency Analysis](#ch10.xhtml#ch10lev5sec4)
+[10.3.9 Congestion Avoidance](#1039-congestion-avoidance)
 
-[10.5.5 Performance Monitoring](#ch10.xhtml#ch10lev5sec5)
+[10.3.10 Utilization](#10310-utilization)
 
-[10.5.6 Packet Sniffing](#ch10.xhtml#ch10lev5sec6)
+[10.3.11 Local Connections](#10311-local-connections)
 
-[10.5.7 TCP Analysis](#ch10.xhtml#ch10lev5sec7)
+[10.4 Architecture](#104-architecture)
 
-[10.5.8 Static Performance Tuning](#ch10.xhtml#ch10lev5sec8)
+[10.4.1 Protocols](#1041-protocols)
 
-[10.5.9 Resource Controls](#ch10.xhtml#ch10lev5sec9)
+[10.4.2 Hardware](#1042-hardware)
 
-[10.5.10 Micro-Benchmarking](#ch10.xhtml#ch10lev5sec10)
+[10.4.3 Software](#1043-software)
 
-[10.6 Observability Tools](#ch10.xhtml#ch10lev6)
+[10.5 Methodology](#105-methodology)
 
-[10.6.1 ss](#ch10.xhtml#ch10lev6sec1)
+[10.5.1 Tools Method](#1051-tools-method)
 
-[10.6.2 ip](#ch10.xhtml#ch10lev6sec2)
+[10.5.2 USE Method](#1052-use-method)
 
-[10.6.3 ifconfig](#ch10.xhtml#ch10lev6sec3)
+[10.5.3 Workload Characterization](#1053-workload-characterization)
 
-[10.6.4 nstat](#ch10.xhtml#ch10lev6sec4)
+[10.5.4 Latency Analysis](#1054-latency-analysis)
 
-[10.6.5 netstat](#ch10.xhtml#ch10lev6sec5)
+[10.5.5 Performance Monitoring](#1055-performance-monitoring)
 
-[10.6.6 sar](#ch10.xhtml#ch10lev6sec6)
+[10.5.6 Packet Sniffing](#1056-packet-sniffing)
 
-[10.6.7 nicstat](#ch10.xhtml#ch10lev6sec7)
+[10.5.7 TCP Analysis](#1057-tcp-analysis)
 
-[10.6.8 ethtool](#ch10.xhtml#ch10lev6sec8)
+[10.5.8 Static Performance Tuning](#1058-static-performance-tuning)
 
-[10.6.9 tcplife](#ch10.xhtml#ch10lev6sec9)
+[10.5.9 Resource Controls](#1059-resource-controls)
 
-[10.6.10 tcptop](#ch10.xhtml#ch10lev6sec10)
+[10.5.10 Micro-Benchmarking](#10510-micro-benchmarking)
 
-[10.6.11 tcpretrans](#ch10.xhtml#ch10lev6sec11)
+[10.6 Observability Tools](#106-observability-tools)
 
-[10.6.12 bpftrace](#ch10.xhtml#ch10lev6sec12)
+[10.6.1 ss](#1061-ss)
 
-[10.6.13 tcpdump](#ch10.xhtml#ch10lev6sec13)
+[10.6.2 ip](#1062-ip)
 
-[10.6.14 Wireshark](#ch10.xhtml#ch10lev6sec14)
+[10.6.3 ifconfig](#1063-ifconfig)
 
-[10.6.15 Other Tools](#ch10.xhtml#ch10lev6sec15)
+[10.6.4 nstat](#1064-nstat)
 
-[10.7 Experimentation](#ch10.xhtml#ch10lev7)
+[10.6.5 netstat](#1065-netstat)
 
-[10.7.1 ping](#ch10.xhtml#ch10lev7sec1)
+[10.6.6 sar](#1066-sar)
 
-[10.7.2 traceroute](#ch10.xhtml#ch10lev7sec2)
+[10.6.7 nicstat](#1067-nicstat)
 
-[10.7.3 pathchar](#ch10.xhtml#ch10lev7sec3)
+[10.6.8 ethtool](#1068-ethtool)
 
-[10.7.4 iperf](#ch10.xhtml#ch10lev7sec4)
+[10.6.9 tcplife](#1069-tcplife)
 
-[10.7.5 netperf](#ch10.xhtml#ch10lev7sec5)
+[10.6.10 tcptop](#10610-tcptop)
 
-[10.7.6 tc](#ch10.xhtml#ch10lev7sec6)
+[10.6.11 tcpretrans](#10611-tcpretrans)
 
-[10.7.7 Other Tools](#ch10.xhtml#ch10lev7sec7)
+[10.6.12 bpftrace](#10612-bpftrace)
 
-[10.8 Tuning](#ch10.xhtml#ch10lev8)
+[10.6.13 tcpdump](#10613-tcpdump)
 
-[10.8.1 System-Wide](#ch10.xhtml#ch10lev8sec1)
+[10.6.14 Wireshark](#10614-wireshark)
 
-[10.8.2 Socket Options](#ch10.xhtml#ch10lev8sec2)
+[10.6.15 Other Tools](#10615-other-tools)
 
-[10.8.3 Configuration](#ch10.xhtml#ch10lev8sec3)
+[10.7 Experimentation](#107-experimentation)
 
-[10.9 Exercises](#ch10.xhtml#ch10lev9)
+[10.7.1 ping](#1071-ping)
 
-[10.10 References](#ch10.xhtml#ch10lev10)
+[10.7.2 traceroute](#1072-traceroute)
 
-[**11 Cloud Computing**](#ch11.xhtml#ch11)
+[10.7.3 pathchar](#1073-pathchar)
 
-[11.1 Background](#ch11.xhtml#ch11lev1)
+[10.7.4 iperf](#1074-iperf)
 
-[11.1.1 Instance Types](#ch11.xhtml#ch11lev1sec1)
+[10.7.5 netperf](#1075-netperf)
 
-[11.1.2 Scalable Architecture](#ch11.xhtml#ch11lev1sec2)
+[10.7.6 tc](#1076-tc)
 
-[11.1.3 Capacity Planning](#ch11.xhtml#ch11lev1sec3)
+[10.7.7 Other Tools](#1077-other-tools)
 
-[11.1.4 Storage](#ch11.xhtml#ch11lev1sec4)
+[10.8 Tuning](#108-tuning)
 
-[11.1.5 Multitenancy](#ch11.xhtml#ch11lev1sec5)
+[10.8.1 System-Wide](#1081-system-wide)
 
-[11.1.6 Orchestration (Kubernetes)](#ch11.xhtml#ch11lev1sec6)
+[10.8.2 Socket Options](#1082-socket-options)
 
-[11.2 Hardware Virtualization](#ch11.xhtml#ch11lev2)
+[10.8.3 Configuration](#1083-configuration)
 
-[11.2.1 Implementation](#ch11.xhtml#ch11lev2sec1)
+[10.9 Exercises](#109-exercises)
 
-[11.2.2 Overhead](#ch11.xhtml#ch11lev2sec2)
+[10.10 References](#1010-references)
 
-[11.2.3 Resource Controls](#ch11.xhtml#ch11lev2sec3)
+[**Chapter 11 - Cloud Computing**](#chapter-11---cloud-computing)
 
-[11.2.4 Observability](#ch11.xhtml#ch11lev2sec4)
+[11.1 Background](#111-background)
 
-[11.3 OS Virtualization](#ch11.xhtml#ch11lev3)
+[11.1.1 Instance Types](#1111-instance-types)
 
-[11.3.1 Implementation](#ch11.xhtml#ch11lev3sec1)
+[11.1.2 Scalable Architecture](#1112-scalable-architecture)
 
-[11.3.2 Overhead](#ch11.xhtml#ch11lev3sec2)
+[11.1.3 Capacity Planning](#1113-capacity-planning)
 
-[11.3.3 Resource Controls](#ch11.xhtml#ch11lev3sec3)
+[11.1.4 Storage](#1114-storage)
 
-[11.3.4 Observability](#ch11.xhtml#ch11lev3sec4)
+[11.1.5 Multitenancy](#1115-multitenancy)
 
-[11.4 Lightweight Virtualization](#ch11.xhtml#ch11lev4)
+[11.1.6 Orchestration (Kubernetes)](#1116-orchestration-kubernetes)
 
-[11.4.1 Implementation](#ch11.xhtml#ch11lev4sec1)
+[11.2 Hardware Virtualization](#112-hardware-virtualization)
 
-[11.4.2 Overhead](#ch11.xhtml#ch11lev4sec2)
+[11.2.1 Implementation](#1121-implementation)
 
-[11.4.3 Resource Controls](#ch11.xhtml#ch11lev4sec3)
+[11.2.2 Overhead](#1122-overhead)
 
-[11.4.4 Observability](#ch11.xhtml#ch11lev4sec4)
+[11.2.3 Resource Controls](#1123-resource-controls)
 
-[11.5 Other Types](#ch11.xhtml#ch11lev5)
+[11.2.4 Observability](#1124-observability)
 
-[11.6 Comparisons](#ch11.xhtml#ch11lev6)
+[11.3 OS Virtualization](#113-os-virtualization)
 
-[11.7 Exercises](#ch11.xhtml#ch11lev7)
+[11.3.1 Implementation](#1131-implementation)
 
-[11.8 References](#ch11.xhtml#ch11lev8)
+[11.3.2 Overhead](#1132-overhead)
 
-[**12 Benchmarking**](#ch12.xhtml#ch12)
+[11.3.3 Resource Controls](#1133-resource-controls)
 
-[12.1 Background](#ch12.xhtml#ch12lev1)
+[11.3.4 Observability](#1134-observability)
 
-[12.1.1 Reasons](#ch12.xhtml#ch12lev1sec1)
+[11.4 Lightweight Virtualization](#114-lightweight-virtualization)
 
-[12.1.2 Effective Benchmarking](#ch12.xhtml#ch12lev1sec2)
+[11.4.1 Implementation](#1141-implementation)
 
-[12.1.3 Benchmarking Failures](#ch12.xhtml#ch12lev1sec3)
+[11.4.2 Overhead](#1142-overhead)
 
-[12.2 Benchmarking Types](#ch12.xhtml#ch12lev2)
+[11.4.3 Resource Controls](#1143-resource-controls)
 
-[12.2.1 Micro-Benchmarking](#ch12.xhtml#ch12lev2sec1)
+[11.4.4 Observability](#1144-observability)
 
-[12.2.2 Simulation](#ch12.xhtml#ch12lev2sec2)
+[11.5 Other Types](#115-other-types)
 
-[12.2.3 Replay](#ch12.xhtml#ch12lev2sec3)
+[11.6 Comparisons](#116-comparisons)
 
-[12.2.4 Industry Standards](#ch12.xhtml#ch12lev2sec4)
+[11.7 Exercises](#117-exercises)
 
-[12.3 Methodology](#ch12.xhtml#ch12lev3)
+[11.8 References](#118-references)
 
-[12.3.1 Passive Benchmarking](#ch12.xhtml#ch12lev3sec1)
+[**Chapter 12 - Benchmarking**](#chapter-12---benchmarking)
 
-[12.3.2 Active Benchmarking](#ch12.xhtml#ch12lev3sec2)
+[12.1 Background](#121-background)
 
-[12.3.3 CPU Profiling](#ch12.xhtml#ch12lev3sec3)
+[12.1.1 Reasons](#1211-reasons)
 
-[12.3.4 USE Method](#ch12.xhtml#ch12lev3sec4)
+[12.1.2 Effective Benchmarking](#1212-effective-benchmarking)
 
-[12.3.5 Workload Characterization](#ch12.xhtml#ch12lev3sec5)
+[12.1.3 Benchmarking Failures](#1213-benchmarking-failures)
 
-[12.3.6 Custom Benchmarks](#ch12.xhtml#ch12lev3sec6)
+[12.2 Benchmarking Types](#122-benchmarking-types)
 
-[12.3.7 Ramping Load](#ch12.xhtml#ch12lev3sec7)
+[12.2.1 Micro-Benchmarking](#1221-micro-benchmarking)
 
-[12.3.8 Sanity Check](#ch12.xhtml#ch12lev3sec8)
+[12.2.2 Simulation](#1222-simulation)
 
-[12.3.9 Statistical Analysis](#ch12.xhtml#ch12lev3sec9)
+[12.2.3 Replay](#1223-replay)
 
-[12.3.10 Benchmarking Checklist](#ch12.xhtml#ch12lev3sec10)
+[12.2.4 Industry Standards](#1224-industry-standards)
 
-[12.4 Benchmark Questions](#ch12.xhtml#ch12lev4)
+[12.3 Methodology](#123-methodology)
 
-[12.5 Exercises](#ch12.xhtml#ch12lev5)
+[12.3.1 Passive Benchmarking](#1231-passive-benchmarking)
 
-[12.6 References](#ch12.xhtml#ch12lev6)
+[12.3.2 Active Benchmarking](#1232-active-benchmarking)
 
-[**13 perf**](#ch13.xhtml#ch13)
+[12.3.3 CPU Profiling](#1233-cpu-profiling)
 
-[13.1 Subcommands Overview](#ch13.xhtml#ch13lev1)
+[12.3.4 USE Method](#1234-use-method)
 
-[13.2 One-Liners](#ch13.xhtml#ch13lev2)
+[12.3.5 Workload Characterization](#1235-workload-characterization)
 
-[13.3 perf Events](#ch13.xhtml#ch13lev3)
+[12.3.6 Custom Benchmarks](#1236-custom-benchmarks)
 
-[13.4 Hardware Events](#ch13.xhtml#ch13lev4)
+[12.3.7 Ramping Load](#1237-ramping-load)
 
-[13.4.1 Frequency Sampling](#ch13.xhtml#ch13lev4sec1)
+[12.3.8 Sanity Check](#1238-sanity-check)
 
-[13.5 Software Events](#ch13.xhtml#ch13lev5)
+[12.3.9 Statistical Analysis](#1239-statistical-analysis)
 
-[13.6 Tracepoint Events](#ch13.xhtml#ch13lev6)
+[12.3.10 Benchmarking Checklist](#12310-benchmarking-checklist)
 
-[13.7 Probe Events](#ch13.xhtml#ch13lev7)
+[12.4 Benchmark Questions](#124-benchmark-questions)
 
-[13.7.1 kprobes](#ch13.xhtml#ch13lev7sec1)
+[12.5 Exercises](#125-exercises)
 
-[13.7.2 uprobes](#ch13.xhtml#ch13lev7sec2)
+[12.6 References](#126-references)
 
-[13.7.3 USDT](#ch13.xhtml#ch13lev7sec3)
+[**Chapter 13 - perf**](#chapter-13---perf)
 
-[13.8 perf stat](#ch13.xhtml#ch13lev8)
+[13.1 Subcommands Overview](#131-subcommands-overview)
 
-[13.8.1 Options](#ch13.xhtml#ch13lev8sec1)
+[13.2 One-Liners](#132-one-liners)
 
-[13.8.2 Interval Statistics](#ch13.xhtml#ch13lev8sec2)
+[13.3 perf Events](#133-perf-events)
 
-[13.8.3 Per-CPU Balance](#ch13.xhtml#ch13lev8sec3)
+[13.4 Hardware Events](#134-hardware-events)
 
-[13.8.4 Event Filters](#ch13.xhtml#ch13lev8sec4)
+[13.4.1 Frequency Sampling](#1341-frequency-sampling)
 
-[13.8.5 Shadow Statistics](#ch13.xhtml#ch13lev8sec5)
+[13.5 Software Events](#135-software-events)
 
-[13.9 perf record](#ch13.xhtml#ch13lev9)
+[13.6 Tracepoint Events](#136-tracepoint-events)
 
-[13.9.1 Options](#ch13.xhtml#ch13lev9sec1)
+[13.7 Probe Events](#137-probe-events)
 
-[13.9.2 CPU Profiling](#ch13.xhtml#ch13lev9sec2)
+[13.7.1 kprobes](#1371-kprobes)
 
-[13.9.3 Stack Walking](#ch13.xhtml#ch13lev9sec3)
+[13.7.2 uprobes](#1372-uprobes)
 
-[13.10 perf report](#ch13.xhtml#ch13lev10)
+[13.7.3 USDT](#1373-usdt)
 
-[13.10.1 TUI](#ch13.xhtml#ch13lev10sec1)
+[13.8 perf stat](#138-perf-stat)
 
-[13.10.2 STDIO](#ch13.xhtml#ch13lev10sec2)
+[13.8.1 Options](#1381-options)
 
-[13.11 perf script](#ch13.xhtml#ch13lev11)
+[13.8.2 Interval Statistics](#1382-interval-statistics)
 
-[13.11.1 Flame Graphs](#ch13.xhtml#ch13lev11sec1)
+[13.8.3 Per-CPU Balance](#1383-per-cpu-balance)
 
-[13.11.2 Trace Scripts](#ch13.xhtml#ch13lev11sec2)
+[13.8.4 Event Filters](#1384-event-filters)
 
-[13.12 perf trace](#ch13.xhtml#ch13lev12)
+[13.8.5 Shadow Statistics](#1385-shadow-statistics)
 
-[13.12.1 Kernel Versions](#ch13.xhtml#ch13lev12sec1)
+[13.9 perf record](#139-perf-record)
 
-[13.13 Other Commands](#ch13.xhtml#ch13lev13)
+[13.9.1 Options](#1391-options)
 
-[13.14 perf Documentation](#ch13.xhtml#ch13lev14)
+[13.9.2 CPU Profiling](#1392-cpu-profiling)
 
-[13.15 References](#ch13.xhtml#ch13lev15)
+[13.9.3 Stack Walking](#1393-stack-walking)
 
-[**14 Ftrace**](#ch14.xhtml#ch14)
+[13.10 perf report](#1310-perf-report)
 
-[14.1 Capabilities Overview](#ch14.xhtml#ch14lev1)
+[13.10.1 TUI](#13101-tui)
 
-[14.2 tracefs (/sys)](#ch14.xhtml#ch14lev2)
+[13.10.2 STDIO](#13102-stdio)
 
-[14.2.1 tracefs Contents](#ch14.xhtml#ch14lev2sec1)
+[13.11 perf script](#1311-perf-script)
 
-[14.3 Ftrace Function Profiler](#ch14.xhtml#ch14lev3)
+[13.11.1 Flame Graphs](#13111-flame-graphs)
 
-[14.4 Ftrace Function Tracing](#ch14.xhtml#ch14lev4)
+[13.11.2 Trace Scripts](#13112-trace-scripts)
 
-[14.4.1 Using trace](#ch14.xhtml#ch14lev4sec1)
+[13.12 perf trace](#1312-perf-trace)
 
-[14.4.2 Using trace_pipe](#ch14.xhtml#ch14lev4sec2)
+[13.12.1 Kernel Versions](#13121-kernel-versions)
 
-[14.4.3 Options](#ch14.xhtml#ch14lev4sec3)
+[13.13 Other Commands](#1313-other-commands)
 
-[14.5 Tracepoints](#ch14.xhtml#ch14lev5)
+[13.14 perf Documentation](#1314-perf-documentation)
 
-[14.5.1 Filter](#ch14.xhtml#ch14lev5sec1)
+[13.15 References](#1315-references)
 
-[14.5.2 Trigger](#ch14.xhtml#ch14lev5sec2)
+[**Chapter 14 - Ftrace**](#chapter-14---ftrace)
 
-[14.6 kprobes](#ch14.xhtml#ch14lev6)
+[14.1 Capabilities Overview](#141-capabilities-overview)
 
-[14.6.1 Event Tracing](#ch14.xhtml#ch14lev6sec1)
+[14.2 tracefs (/sys)](#142-tracefs-sys)
 
-[14.6.2 Arguments](#ch14.xhtml#ch14lev6sec2)
+[14.2.1 tracefs Contents](#1421-tracefs-contents)
 
-[14.6.3 Return Values](#ch14.xhtml#ch14lev6sec3)
+[14.3 Ftrace Function Profiler](#143-ftrace-function-profiler)
 
-[14.6.4 Filters and Triggers](#ch14.xhtml#ch14lev6sec4)
+[all functions enabled ####](#all-functions-enabled-)
 
-[14.6.5 kprobe Profiling](#ch14.xhtml#ch14lev6sec5)
+[14.4 Ftrace Function Tracing](#144-ftrace-function-tracing)
 
-[14.7 uprobes](#ch14.xhtml#ch14lev7)
+[14.4.1 Using trace](#1441-using-trace)
 
-[14.7.1 Event Tracing](#ch14.xhtml#ch14lev7sec1)
+[all functions enabled ####](#all-functions-enabled-)
 
-[14.7.2 Arguments and Return Values](#ch14.xhtml#ch14lev7sec2)
+[14.4.2 Using trace_pipe](#1442-using-trace_pipe)
 
-[14.7.3 Filters and Triggers](#ch14.xhtml#ch14lev7sec3)
+[14.4.3 Options](#1443-options)
 
-[14.7.4 uprobe Profiling](#ch14.xhtml#ch14lev7sec4)
+[14.5 Tracepoints](#145-tracepoints)
 
-[14.8 Ftrace function_graph](#ch14.xhtml#ch14lev8)
+[14.5.1 Filter](#1451-filter)
 
-[14.8.1 Graph Tracing](#ch14.xhtml#ch14lev8sec1)
+[14.5.2 Trigger](#1452-trigger)
 
-[14.8.2 Options](#ch14.xhtml#ch14lev8sec2)
+[14.6 kprobes](#146-kprobes)
 
-[14.9 Ftrace hwlat](#ch14.xhtml#ch14lev9)
+[14.6.1 Event Tracing](#1461-event-tracing)
 
-[14.10 Ftrace Hist Triggers](#ch14.xhtml#ch14lev10)
+[14.6.2 Arguments](#1462-arguments)
 
-[14.10.1 Single Keys](#ch14.xhtml#ch14lev10sec1)
+[14.6.3 Return Values](#1463-return-values)
 
-[14.10.2 Fields](#ch14.xhtml#ch14lev10sec2)
+[14.6.4 Filters and Triggers](#1464-filters-and-triggers)
 
-[14.10.3 Modifiers](#ch14.xhtml#ch14lev10sec3)
+[14.6.5 kprobe Profiling](#1465-kprobe-profiling)
 
-[14.10.4 PID Filters](#ch14.xhtml#ch14lev10sec4)
+[14.7 uprobes](#147-uprobes)
 
-[14.10.5 Multiple Keys](#ch14.xhtml#ch14lev10sec5)
+[14.7.1 Event Tracing](#1471-event-tracing)
 
-[14.10.6 Stack Trace Keys](#ch14.xhtml#ch14lev10sec6)
+[14.7.2 Arguments and Return Values](#1472-arguments-and-return-values)
 
-[14.10.7 Synthetic Events](#ch14.xhtml#ch14lev10sec7)
+[14.7.3 Filters and Triggers](#1473-filters-and-triggers)
 
-[14.11 trace-cmd](#ch14.xhtml#ch14lev11)
+[14.7.4 uprobe Profiling](#1474-uprobe-profiling)
 
-[14.11.1 Subcommands Overview](#ch14.xhtml#ch14lev11sec1)
+[14.8 Ftrace function_graph](#148-ftrace-function_graph)
 
-[14.11.2 trace-cmd One-Liners](#ch14.xhtml#ch14lev11sec2)
+[all functions enabled ####](#all-functions-enabled-)
 
-[14.11.3 trace-cmd vs. perf(1)](#ch14.xhtml#ch14lev11sec3)
+[14.8.1 Graph Tracing](#1481-graph-tracing)
 
-[14.11.4 trace-cmd function_graph](#ch14.xhtml#ch14lev11sec4)
+[14.8.2 Options](#1482-options)
 
-[14.11.5 KernelShark](#ch14.xhtml#ch14lev11sec5)
+[14.9 Ftrace hwlat](#149-ftrace-hwlat)
 
-[14.11.6 trace-cmd Documentation](#ch14.xhtml#ch14lev11sec6)
+[14.10 Ftrace Hist Triggers](#1410-ftrace-hist-triggers)
 
-[14.12 perf ftrace](#ch14.xhtml#ch14lev12)
+[14.10.1 Single Keys](#14101-single-keys)
 
-[14.13 perf-tools](#ch14.xhtml#ch14lev13)
+[14.10.2 Fields](#14102-fields)
 
-[14.13.1 Tool Coverage](#ch14.xhtml#ch14lev13sec1)
+[14.10.3 Modifiers](#14103-modifiers)
 
-[14.13.2 Single-Purpose Tools](#ch14.xhtml#ch14lev13sec2)
+[14.10.4 PID Filters](#14104-pid-filters)
 
-[14.13.3 Multi-Purpose Tools](#ch14.xhtml#ch14lev13sec3)
+[14.10.5 Multiple Keys](#14105-multiple-keys)
 
-[14.13.4 perf-tools One-Liners](#ch14.xhtml#ch14lev13sec4)
+[14.10.6 Stack Trace Keys](#14106-stack-trace-keys)
 
-[14.13.5 Example](#ch14.xhtml#ch14lev13sec5)
+[14.10.7 Synthetic Events](#14107-synthetic-events)
 
-[14.13.6 perf-tools vs. BCC/BPF](#ch14.xhtml#ch14lev13sec6)
+[14.11 trace-cmd](#1411-trace-cmd)
 
-[14.13.7 Documentation](#ch14.xhtml#ch14lev13sec7)
+[14.11.1 Subcommands Overview](#14111-subcommands-overview)
 
-[14.14 Ftrace Documentation](#ch14.xhtml#ch14lev14)
+[14.11.2 trace-cmd One-Liners](#14112-trace-cmd-one-liners)
 
-[14.15 References](#ch14.xhtml#ch14lev15)
+[14.11.3 trace-cmd vs. perf(1)](#14113-trace-cmd-vs-perf1)
 
-[**15 BPF**](#ch15.xhtml#ch15)
+[14.11.4 trace-cmd function_graph](#14114-trace-cmd-function_graph)
 
-[15.1 BCC](#ch15.xhtml#ch15lev1)
+[14.11.5 KernelShark](#14115-kernelshark)
 
-[15.1.1 Installation](#ch15.xhtml#ch15lev1sec1)
+[14.11.6 trace-cmd Documentation](#14116-trace-cmd-documentation)
 
-[15.1.2 Tool Coverage](#ch15.xhtml#ch15lev1sec2)
+[14.12 perf ftrace](#1412-perf-ftrace)
 
-[15.1.3 Single-Purpose Tools](#ch15.xhtml#ch15lev1sec3)
+[14.13 perf-tools](#1413-perf-tools)
 
-[15.1.4 Multi-Purpose Tools](#ch15.xhtml#ch15lev1sec4)
+[14.13.1 Tool Coverage](#14131-tool-coverage)
 
-[15.1.5 One-Liners](#ch15.xhtml#ch15lev1sec5)
+[14.13.2 Single-Purpose Tools](#14132-single-purpose-tools)
 
-[15.1.6 Multi-Tool Example](#ch15.xhtml#ch15lev1sec6)
+[14.13.3 Multi-Purpose Tools](#14133-multi-purpose-tools)
 
-[15.1.7 BCC vs. bpftrace](#ch15.xhtml#ch15lev1sec7)
+[14.13.4 perf-tools One-Liners](#14134-perf-tools-one-liners)
 
-[15.1.8 Documentation](#ch15.xhtml#ch15lev1sec8)
+[14.13.5 Example](#14135-example)
 
-[15.2 bpftrace](#ch15.xhtml#ch15lev2)
+[14.13.6 perf-tools vs. BCC/BPF](#14136-perf-tools-vs-bccbpf)
 
-[15.2.1 Installation](#ch15.xhtml#ch15lev2sec1)
+[14.13.7 Documentation](#14137-documentation)
 
-[15.2.2 Tools](#ch15.xhtml#ch15lev2sec2)
+[14.14 Ftrace Documentation](#1414-ftrace-documentation)
 
-[15.2.3 One-Liners](#ch15.xhtml#ch15lev2sec3)
+[14.15 References](#1415-references)
 
-[15.2.4 Programming](#ch15.xhtml#ch15lev2sec4)
+[**Chapter 15 - BPF**](#chapter-15---bpf)
 
-[15.2.5 Reference](#ch15.xhtml#ch15lev2sec5)
+[15.1 BCC](#151-bcc)
 
-[15.2.6 Documentation](#ch15.xhtml#ch15lev2sec6)
+[15.1.1 Installation](#1511-installation)
 
-[15.3 References](#ch15.xhtml#ch15lev3)
+[15.1.2 Tool Coverage](#1512-tool-coverage)
 
-[**16 Case Study**](#ch16.xhtml#ch16)
+[15.1.3 Single-Purpose Tools](#1513-single-purpose-tools)
 
-[16.1 An Unexplained Win](#ch16.xhtml#ch16lev1)
+[15.1.4 Multi-Purpose Tools](#1514-multi-purpose-tools)
 
-[16.1.1 Problem Statement](#ch16.xhtml#ch16lev1sec1)
+[15.1.5 One-Liners](#1515-one-liners)
 
-[16.1.2 Analysis Strategy](#ch16.xhtml#ch16lev1sec2)
+[15.1.6 Multi-Tool Example](#1516-multi-tool-example)
 
-[16.1.3 Statistics](#ch16.xhtml#ch16lev1sec3)
+[15.1.7 BCC vs. bpftrace](#1517-bcc-vs-bpftrace)
 
-[16.1.4 Configuration](#ch16.xhtml#ch16lev1sec4)
+[15.1.8 Documentation](#1518-documentation)
 
-[16.1.5 PMCs](#ch16.xhtml#ch16lev1sec5)
+[15.2 bpftrace](#152-bpftrace)
 
-[16.1.6 Software Events](#ch16.xhtml#ch16lev1sec6)
+[15.2.1 Installation](#1521-installation)
 
-[16.1.7 Tracing](#ch16.xhtml#ch16lev1sec7)
+[15.2.2 Tools](#1522-tools)
 
-[16.1.8 Conclusion](#ch16.xhtml#ch16lev1sec8)
+[15.2.3 One-Liners](#1523-one-liners)
 
-[16.2 Additional Information](#ch16.xhtml#ch16lev2)
+[15.2.4 Programming](#1524-programming)
 
-[16.3 References](#ch16.xhtml#ch16lev3)
+[15.2.5 Reference](#1525-reference)
 
-[**A USE Method: Linux**](#appa.xhtml#appa)
+[15.2.6 Documentation](#1526-documentation)
 
-[**B sar Summary**](#appb.xhtml#appb)
+[15.3 References](#153-references)
 
-[**C bpftrace One-Liners**](#appc.xhtml#appc)
+[**Chapter 16 - Case Study**](#chapter-16---case-study)
 
-[**D Solutions to Selected Exercises**](#appd.xhtml#appd)
+[16.1 An Unexplained Win](#161-an-unexplained-win)
 
-[**E Systems Performance Who's Who**](#appe.xhtml#appe)
+[16.1.1 Problem Statement](#1611-problem-statement)
 
-[**Glossary**](#gloss.xhtml#gloss)
+[16.1.2 Analysis Strategy](#1612-analysis-strategy)
 
-[**Index**](#index.xhtml#index)
+[16.1.3 Statistics](#1613-statistics)
+
+[16.1.4 Configuration](#1614-configuration)
+
+[16.1.5 PMCs](#1615-pmcs)
+
+[16.1.6 Software Events](#1616-software-events)
+
+[16.1.7 Tracing](#1617-tracing)
+
+[16.1.8 Conclusion](#1618-conclusion)
+
+[16.2 Additional Information](#162-additional-information)
+
+[16.3 References](#163-references)
+
+[**Appendix A - USE Method: Linux**](#appendix-a---use-method-linux)
+
+[Physical Resources](#physical-resources)
+
+[Software Resources](#software-resources)
+
+[A.1 References](#a1-references)
+
+[**Appendix B - sar Summary**](#appendix-b---sar-summary)
+
+[**Appendix C - bpftrace One-Liners**](#appendix-c---bpftrace-one-liners)
+
+[CPUs](#cpus)
+
+[Memory](#memory)
+
+[File Systems](#file-systems)
+
+[Disks](#disks)
+
+[Networking](#networking)
+
+[**Appendix D - Solutions to Selected Exercises**](#appendix-d---solutions-to-selected-exercises)
+
+[Chapter 2---Methodology](#chapter-2---methodology)
+
+[Chapter 3---Operating Systems](#chapter-3---operating-systems)
+
+[Chapter 6---CPUs](#chapter-6---cpus)
+
+[Chapter 7---Memory](#chapter-7---memory)
+
+[Chapter 8---File Systems](#chapter-8---file-systems)
+
+[Chapter 9---Disks](#chapter-9---disks)
+
+[Chapter 11---Cloud Computing](#chapter-11---cloud-computing)
+
+[**Appendix E - Systems Performance Who's Who**](#appendix-e---systems-performance-whos-who)
+
+[E.1 References](#e1-references)
+
+[**Glossary**](#glossary)
+
+[**Index**](#index)
+
+[A](#a)
+
+[B](#b)
+
+[C](#c)
+
+[D](#d)
+
+[E](#e)
+
+[F](#f)
+
+[G](#g)
+
+[H](#h)
+
+[I](#i)
+
+[J](#j)
+
+[K](#k)
+
+[L](#l)
+
+[M](#m)
+
+[N](#n)
+
+[O](#o)
+
+[P](#p)
+
+[Q](#q)
+
+[R](#r)
+
+[S](#s)
+
+[T](#t)
+
+[U](#u)
+
+[V](#v)
+
+[W](#w)
+
+[X](#x)
+
+[Y](#y)
+
+[Z](#z)
+
+[**Code Snippets**](#code-snippets)
 
 ## Preface
 
@@ -1840,9 +1956,7 @@ Since the first edition, I've continued to work as a performance engineer, debug
 
 **Brendan Gregg** is an industry expert in computing performance and cloud computing. He is a senior performance architect at Netflix, where he does performance design, evaluation, analysis, and tuning. The author of multiple technical books, including _BPF Performance Tools_, he received the USENIX LISA Award for Outstanding Achievement in System Administration. He has also been a kernel engineer, performance lead, and professional technical trainer, and was program co-chair for the USENIX LISA 2018 conference. He has created performance tools included in multiple operating systems, along with visualizations and methodologies for performance analysis, including flame graphs.
 
-## [Chapter 1]{.pd_ash}
-
-Introduction
+## Chapter 1 - Introduction
 
 Computer performance is an exciting, varied, and challenging discipline. This chapter introduces you to the field of systems performance. The learning objectives of this chapter are:
 
@@ -2365,9 +2479,7 @@ A more detailed case study is provided as [Chapter 16](#ch16.xhtml#ch16), [Case 
 
 **\[Corry 20\]** Corry, A., _Retrospectives Antipatterns_, Addison-Wesley, 2020.
 
-## [Chapter 2]{.pd_ash}
-
-Methodologies
+## Chapter 2 - Methodologies
 
 _Give a man a fish and you feed him for a day.\
 Teach a man to fish and you feed him for a lifetime._
@@ -4660,9 +4772,7 @@ Modern visualization tools provide real-time views of system performance, access
 
 **\[R Project 20\]** R Project, "The R Project for Statistical Computing," <https://www.r-project.org>, accessed 2020.
 
-## [Chapter 3]{.pd_ash}
-
-Operating Systems
+## Chapter 3 - Operating Systems
 
 An understanding of the operating system and its kernel is essential for systems performance analysis. You will frequently need to develop and then test hypotheses about system behavior, such as how system calls are being performed, how the kernel schedules threads on CPUs, how limited memory could be affecting performance, or how a file system processes I/O. These activities will require you to apply your knowledge of the operating system and the kernel.
 
@@ -5891,9 +6001,7 @@ Operating systems and their kernels is a fascinating and extensive topic. This c
 
 **\[Yosifovich 17\]** Yosifovich, P., Ionescu, A., Russinovich, M. E., and Solomon, D. A., _Windows Internals, Part 1 (Developer Reference)_, 7th Edition, Microsoft Press, 2017.
 
-## [Chapter 4]{.pd_ash}
-
-Observability Tools
+## Chapter 4 - Observability Tools
 
 Operating systems have historically provided many tools for observing system software and hardware components. To the newcomer, the wide range of available tools and metrics suggested that everything---or at least everything important---could be observed. In reality there were many gaps, and systems performance experts became skilled in the art of inference and interpretation: figuring out activity from indirect tools and statistics. For example, network packets could be examined individually (sniffing), but disk I/O could not (at least, not easily).
 
@@ -7549,9 +7657,7 @@ Answer the following questions about observability tools (you may wish to revisi
 
 **\[UTK 20\]** "Performance Application Programming Interface," <http://icl.cs.utk.edu/papi>, accessed 2020.
 
-## [Chapter 5]{.pd_ash}
-
-Applications
+## Chapter 5 - Applications
 
 Performance is best tuned closest to where the work is performed: in the applications. These include databases, web servers, application servers, load balancers, file servers, and more. The chapters that follow approach applications from the perspectives of the resources they consume: CPUs, memory, file systems, disks, and the network. This chapter addresses the application level.
 
@@ -9253,9 +9359,7 @@ At the time of writing, DWARF-based and LBR stack walking are not available from
 
 **\[Pangin 20\]** Pangin, A., "async-profiler," <https://github.com/jvm-profiling-tools/async-profiler>, last updated 2020.
 
-## [Chapter 6]{.pd_ash}
-
-CPUs
+## Chapter 6 - CPUs
 
 CPUs drive all software and are often the first target for systems performance analysis. This chapter explains CPU hardware and software, and shows how CPU usage can be examined in detail to look for performance improvements.
 
@@ -12988,9 +13092,7 @@ The settings usually provide maximum performance by default and don't need to be
 
 **\[Verma 20\]** Verma, A., "CUDA Cores vs Stream Processors Explained," <https://graphicscardhub.com/cuda-cores-vs-stream-processors>, 2020.
 
-## [Chapter 7]{.pd_ash}
-
-Memory
+## Chapter 7 - Memory
 
 System main memory stores application and kernel instructions, their working data, and file system caches. The secondary storage for this data is typically the storage devices---the disks---which operate orders of magnitude more slowly. Once main memory has filled, the system may begin switching data between main memory and the storage devices. This is a slow process that will often become a system bottleneck, dramatically decreasing performance. The system may also terminate the largest memory-consuming process, causing application outages.
 
@@ -15514,9 +15616,7 @@ For more on resource controls, see [Chapter 11](#ch11.xhtml#ch11), [Cloud Comput
 
 **\[Valgrind 20\]** "Valgrind Documentation," <http://valgrind.org/docs/manual>, May 2020.
 
-## [Chapter 8]{.pd_ash}
-
-File Systems
+## Chapter 8 - File Systems
 
 File system performance often matters more to the application than disk or storage device performance, because it is the file system that applications interact with and wait for. File systems can use caching, buffering, and asynchronous I/O to avoid subjecting applications to disk-level (or remote storage system) latency.
 
@@ -18271,9 +18371,7 @@ As with other kernel tunables, check their documentation for the full list, desc
 
 **\[Torvalds 20a\]** Torvalds, L., "Re: Do not blame anyone. Please give polite, constructive criticism," <https://www.realworldtech.com/forum/?threadid=189711&curpostid=189841>, 2020.
 
-## [Chapter 9]{.pd_ash}
-
-Disks
+## Chapter 9 - Disks
 
 Disk I/O can cause significant application latency, and is therefore an important target of systems performance analysis. Under high load, disks become a bottleneck, leaving CPUs idle as the system waits for disk I/O to complete. Identifying and eliminating these bottlenecks can improve performance and application throughput by orders of magnitude.
 
@@ -21273,9 +21371,7 @@ Each setting has a reasonably descriptive name and is described in more detail i
 
 **\[NVMe 20\]** "NVM Express," <https://nvmexpress.org>, accessed 2020.
 
-## [Chapter 10]{.pd_ash}
-
-Network
+## Chapter 10 - Network
 
 As systems become more distributed, especially with cloud computing environments, the network plays a bigger role in performance. Common tasks in network performance include improving network latency and throughput, and eliminating latency outliers, which can be caused by dropped or delayed packets.
 
@@ -24995,9 +25091,7 @@ The following configuration options may also be available for tuning network per
 
 **\[Wireshark 20\]** "Wireshark," <https://www.wireshark.org>, accessed 2020.
 
-## [Chapter 11]{.pd_ash}
-
-Cloud Computing
+## Chapter 11 - Cloud Computing
 
 The rise of cloud computing solves some old problems in the field of performance while creating new ones. A cloud environment can be created instantly and scaled on demand, without the typical overheads of building and managing an on-premises data center. Clouds also allow better granularity for deployments---fractions of a server can be used by different customers as needed. However, this brings its own challenges: the performance overhead of virtualization technologies, and resource contention with neighboring tenants.
 
@@ -27203,9 +27297,7 @@ Virtualization is still an evolving space, with lightweight hardware hypervisors
 
 **\[Xu 20\]** Xu, P., "iops limit for pod/pvc/pv #92287," <https://github.com/kubernetes/kubernetes/issues/92287>, 2020.
 
-## [Chapter 12]{.pd_ash}
-
-Benchmarking
+## Chapter 12 - Benchmarking
 
 _There are lies, damn lies and then there are performance measures._
 
@@ -28232,9 +28324,7 @@ When studying industry benchmarks, many of these questions may be answered from 
 
 **\[SPEC 20\]** "Standard Performance Evaluation Corporation," <https://www.spec.org>, accessed 2020.
 
-## [Chapter 13]{.pd_ash}
-
-perf
+## Chapter 13 - perf
 
 perf(1) is the official Linux profiler and is in the Linux kernel source under tools/perf.^[1](#ch13.xhtml#ch13fn1){#ch13.xhtml#ch13fn1a}^ It is a multi-tool that has profiling, tracing, and scripting capabilities, and is the front-end to the kernel perf_events observability subsystem. perf_events is also known as Performance Counters for Linux (PCL) or Linux Performance Events (LPE). perf_events and the perf(1) front-end began with performance monitoring counter (PMC) capabilities, but have since grown to support event-based tracing sources as well: tracepoints, kprobes, uprobes, and USDT.
 
@@ -30043,9 +30133,7 @@ As perf(1) frequently gains new features, check for updates in later kernel vers
 
 **\[KernelNewbies 20\]** "KernelNewbies: LinuxVersions," <https://kernelnewbies.org/LinuxVersions>, accessed 2020.
 
-## [Chapter 14]{.pd_ash}
-
-Ftrace
+## Chapter 14 - Ftrace
 
 Ftrace is the official Linux tracer, a multi-tool composed of different tracing utilities. Ftrace was created by Steven Rostedt and first added to Linux 2.6.27 (2008). It can be used without any additional user-level front end, making it especially suited for embedded Linux environments where storage space is at a premium. It is also useful for server environments.
 
@@ -32484,9 +32572,7 @@ Ftrace (and trace events) are well documented in the Linux source, under the Doc
 
 **\[Zanussi 20\]** Zanussi, T., "Event Histograms," _Linux documentation_, <https://www.kernel.org/doc/html/latest/trace/histogram.html>, accessed 2020.
 
-## [Chapter 15]{.pd_ash}
-
-BPF
+## Chapter 15 - BPF
 
 This chapter describes the BCC and bpftrace tracing front ends for extended BPF. These front ends provide a collection of performance analysis tools, and these tools were used in previous chapters. The BPF technology was introduced in [Chapter 3](#ch03.xhtml#ch03), [Operating System](#ch03.xhtml#ch03), [Section 3.4.4](#ch03.xhtml#ch03lev4sec4), [Extended BPF](#ch03.xhtml#ch03lev4sec4). In summary, extended BPF is a kernel execution environment that can provide programmatic capabilities to tracers.
 
@@ -34607,9 +34693,7 @@ Note that some bpftrace capabilities described in [\[Gregg 19\]](#ch15.xhtml#ch1
 
 **\[Iovisor 20d\]** Gregg, B., et al., "The bpftrace One-Liner Tutorial," <https://github.com/iovisor/bpftrace/blob/master/docs/tutorial_one_liners.md>, last updated 2020.
 
-## [Chapter 16]{.pd_ash}
-
-Case Study
+## Chapter 16 - Case Study
 
 This chapter is a systems performance case study: the story of a real-world performance issue, from initial report to final resolution. This particular issue occurred in a production cloud computing environment; I chose it as a routine example of systems performance analysis.
 
@@ -35000,9 +35084,7 @@ Some systems performance case studies are published from time to time, for examp
 
 **\[USENIX 20\]** ";login: The USENIX Magazine," <https://www.usenix.org/publications/login>, accessed 2020.
 
-## [Appendix A]{.pd_ash}
-
-USE Method: Linux
+## Appendix A - USE Method: Linux
 
 This appendix contains a checklist for Linux derived from the USE method [\[Gregg 13d\]](#appa.xhtml#apparef1). This is a method for checking system health, and identifying common resource bottlenecks and errors, introduced in [Chapter 2](#ch02.xhtml#ch02), [Methodologies](#ch02.xhtml#ch02), [Section 2.5.9](#ch02.xhtml#ch02lev5sec9), [The USE Method](#ch02.xhtml#ch02lev5sec9). Later chapters ([5](#ch05.xhtml#ch05), [6](#ch06.xhtml#ch06), [7](#ch07.xhtml#ch07), [9](#ch09.xhtml#ch09), [10](#ch10.xhtml#ch10)) described it in specific contexts and introduced tools to support its use.
 
@@ -35301,9 +35383,7 @@ For any environment that imposes resource controls (e.g., cloud computing), chec
 
 **\[Gregg 13d\]** Gregg, B., "USE Method: Linux Performance Checklist," <http://www.brendangregg.com/USEmethod/use-linux.html>, first published 2013.
 
-## [Appendix B]{.pd_ash}
-
-sar Summary
+## Appendix B - sar Summary
 
 This is a summary of options and metrics from the system activity reporter, sar(1). You can use this to jog your memory about which metrics are under which options. See the man page for the full list.
 
@@ -35427,9 +35507,7 @@ I have highlighted in bold the key metrics that I look for.
 
 Some sar(1) options may require kernel features enabled (e.g., huge pages), and some metrics were added in later versions of sar(1) (version 12.0.6 is shown here).
 
-## [Appendix C]{.pd_ash}
-
-bpftrace One-Liners
+## Appendix C - bpftrace One-Liners
 
 This appendix contains some handy bpftrace one-liners. Apart from being useful in themselves, they can help you learn bpftrace, one line at a time. Most of these were included in previous chapters. Many may not work right away: They may depend on the presence of certain tracepoints or functions, or on a specific kernel version or configuration.
 
@@ -35985,9 +36063,7 @@ Count all iwl device driver tracepoints (adds high overhead to iwl):
 bpftrace -e 't:iwlwifi:*,t:iwlwifi_io:* { @[probe] = count(); }'
 ```
 
-## [Appendix D]{.pd_ash}
-
-Solutions to Selected Exercises
+## Appendix D - Solutions to Selected Exercises
 
 The following are suggested solutions to selected exercises.^[1](#appd.xhtml#appdfn1){#appd.xhtml#appdfn1a}^
 
@@ -36043,9 +36119,7 @@ Q. Describe physical system observability from an OS-virtualized guest.
 
 A. Depending on the host kernel implementation, the guest can see high-level metrics of all physical resources, including CPUs and disks, and notice when they are utilized by other tenants. Metrics that leak user data should be blocked by the kernel. For example, utilization for a CPU may be observable (say, 50%), but not the process IDs and process names from other tenants that are causing it.
 
-## [Appendix E]{.pd_ash}
-
-Systems Performance Who's Who
+## Appendix E - Systems Performance Who's Who
 
 It can be useful to know who created the technologies that we use. This is a list of who's who in the field of systems performance, based on the technologies in this book. This was inspired by the Unix who's who list in [\[Libes 89\]](#appe.xhtml#apperef2). Apologies to those who are missing or misappropriated. If you wish to dig further into the people and history, see the chapter references and the names listed in the Linux source, both the Linux repository history and the MAINTAINERS file in the Linux source code. The Acknowledgments section of my BPF book [\[Gregg 19\]](#appe.xhtml#apperef12) also lists various technologies, in particular extended BPF, BCC, bpftrace, kprobes, and uprobes, and the people behind them.
 

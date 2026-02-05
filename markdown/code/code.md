@@ -47,67 +47,105 @@ For questions about sales outside the U.S., please contact <intlcs@pearson.com>.
 
 ## Contents
 
-1.  [About the Author](#pref01.xhtml#pref01)
+[About the Author](#about-the-author)
 
-2.  [Preface to the Second Edition](#pref02.xhtml#pref02)
 
-3.  [Chapter One Best Friends](#ch01.xhtml#ch01)
+[Preface to the Second Edition](#preface-to-the-second-edition)
 
-4.  [Chapter Two Codes and Combinations](#ch02.xhtml#ch02)
 
-5.  [Chapter Three Braille and Binary Codes](#ch03.xhtml#ch03)
+[Chapter One - Best Friends](#chapter-one---best-friends)
 
-6.  [Chapter Four Anatomy of a Flashlight](#ch04.xhtml#ch04)
 
-7.  [Chapter Five Communicating Around Corners](#ch05.xhtml#ch05)
+[Chapter Two - Codes and Combinations](#chapter-two---codes-and-combinations)
 
-8.  [Chapter Six Logic with Switches](#ch06.xhtml#ch06)
 
-9.  [Chapter Seven Telegraphs and Relays](#ch07.xhtml#ch07)
+[Chapter Three - Braille and Binary Codes](#chapter-three---braille-and-binary-codes)
 
-10. [Chapter Eight Relays and Gates](#ch08.xhtml#ch08)
 
-11. [Chapter Nine Our Ten Digits](#ch09.xhtml#ch09)
+[Chapter Four - Anatomy of a Flashlight](#chapter-four---anatomy-of-a-flashlight)
 
-12. [Chapter Ten Alternative 10s](#ch10.xhtml#ch10)
 
-13. [Chapter Eleven Bit by Bit by Bit](#ch11.xhtml#ch11)
+[Chapter Five - Communicating Around Corners](#chapter-five---communicating-around-corners)
 
-14. [Chapter Twelve Bytes and Hexadecimal](#ch12.xhtml#ch12)
 
-15. [Chapter Thirteen From ASCII to Unicode](#ch13.xhtml#ch13)
+[Chapter Six - Logic with Switches](#chapter-six---logic-with-switches)
 
-16. [Chapter Fourteen Adding with Logic Gates](#ch14.xhtml#ch14)
 
-17. [Chapter Fifteen Is This for Real?](#ch15.xhtml#ch15)
+[Chapter Seven - Telegraphs and Relays](#chapter-seven---telegraphs-and-relays)
 
-18. [Chapter Sixteen But What About Subtraction?](#ch16.xhtml#ch16)
 
-19. [Chapter Seventeen Feedback and Flip-Flops](#ch17.xhtml#ch17)
+[Chapter Eight - Relays and Gates](#chapter-eight---relays-and-gates)
 
-20. [Chapter Eighteen Let's Build a Clock!](#ch18.xhtml#ch18)
 
-21. [Chapter Nineteen An Assemblage of Memory](#ch19.xhtml#ch19)
+[Chapter Nine - Our Ten Digits](#chapter-nine---our-ten-digits)
 
-22. [Chapter Twenty Automating Arithmetic](#ch20.xhtml#ch20)
 
-23. [Chapter Twenty-One The Arithmetic Logic Unit](#ch21.xhtml#ch21)
+[Chapter Ten - Alternative 10s](#chapter-ten---alternative-10s)
 
-24. [Chapter Twenty-Two Registers and Busses](#ch22.xhtml#ch22)
 
-25. [Chapter Twenty-Three CPU Control Signals](#ch23.xhtml#ch23)
+[Chapter Eleven - Bit by Bit by Bit](#chapter-eleven---bit-by-bit-by-bit)
 
-26. [Chapter Twenty-Four Loops, Jumps, and Calls](#ch24.xhtml#ch24)
 
-27. [Chapter Twenty-Five Peripherals](#ch25.xhtml#ch25)
+[Chapter Twelve - Bytes and Hexadecimal](#chapter-twelve---bytes-and-hexadecimal)
 
-28. [Chapter Twenty-Six The Operating System](#ch26.xhtml#ch26)
 
-29. [Chapter Twenty-Seven Coding](#ch27.xhtml#ch27)
+[Chapter Thirteen - From ASCII to Unicode](#chapter-thirteen---from-ascii-to-unicode)
 
-30. [Chapter Twenty-Eight The World Brain](#ch28.xhtml#ch28)
 
-31. [Index](#index.xhtml#index)
+[Chapter Fourteen - Adding with Logic Gates](#chapter-fourteen---adding-with-logic-gates)
+
+
+[Chapter Fifteen - Is This for Real?](#chapter-fifteen---is-this-for-real)
+
+
+[Chapter Sixteen - But What About Subtraction?](#chapter-sixteen---but-what-about-subtraction)
+
+
+[Chapter Seventeen - Feedback and Flip-Flops](#chapter-seventeen---feedback-and-flip-flops)
+
+
+[Chapter Eighteen - Let's Build a Clock!](#chapter-eighteen---lets-build-a-clock)
+
+
+[Chapter Nineteen - An Assemblage of Memory](#chapter-nineteen---an-assemblage-of-memory)
+
+
+[Chapter Twenty - Automating Arithmetic](#chapter-twenty---automating-arithmetic)
+
+
+[Chapter Twenty-One - The Arithmetic Logic Unit](#chapter-twenty-one---the-arithmetic-logic-unit)
+
+
+[Chapter Twenty-Two - Registers and Busses](#chapter-twenty-two---registers-and-busses)
+
+
+[Chapter Twenty-Three - CPU Control Signals](#chapter-twenty-three---cpu-control-signals)
+
+
+[Chapter Twenty-Four - Loops, Jumps, and Calls](#chapter-twenty-four---loops-jumps-and-calls)
+
+
+[Chapter Twenty-Five - Peripherals](#chapter-twenty-five---peripherals)
+
+
+[Chapter Twenty-Six - The Operating System](#chapter-twenty-six---the-operating-system)
+
+
+[Chapter Twenty-Seven - Coding](#chapter-twenty-seven---coding)
+
+
+[Chapter Twenty-Eight - The World Brain](#chapter-twenty-eight---the-world-brain)
+
+
+[Index](#index)
+
+
+[Colophon](#colophon)
+
+
+[Code Snippets](#code-snippets)
+
+
 
 ## About the Author
 
@@ -197,9 +235,8 @@ While we work hard to present unbiased content, we want to hear from you about a
 
 - Please contact us with concerns about any potential bias at <https://www.pearson.com/report-bias.html>.
 
-## Chapter One
+## Chapter One - Best Friends
 
-## Best Friends
 
 You're 10 years old. Your best friend lives across the street. The windows of your bedrooms actually face each other. Every night, after your parents have declared bedtime at the usual indecently early hour, you still need to exchange thoughts, observations, secrets, gossip, jokes, and dreams. No one can blame you. The impulse to communicate is, after all, one of the most human of traits.
 
@@ -289,9 +326,8 @@ When finally you and your best friend memorize Morse code (for that's the only w
 
 The key word here is _two_. Two types of blinks, two vowel sounds, two different anything, really, can with suitable combinations convey all types of information.
 
-## Chapter Two
+## Chapter Two - Codes and Combinations
 
-## Codes and Combinations
 
 Morse code was invented around 1837 by Samuel Finley Breese Morse (1791--1872), whom we shall meet more properly later in this book. It was further developed by others, most notably Alfred Vail (1807--1859), and it evolved into a couple of different versions. The system described in this book is more formally known as International Morse code.
 
@@ -399,9 +435,8 @@ Morse code is said to be _binary_ (literally meaning _two by two_) because the c
 
 Combinations of binary objects (such as coins) and binary codes (such as Morse code) are always described by powers of two. Two is a very important number in this book.
 
-## Chapter Three
+## Chapter Three - Braille and Binary Codes
 
-## Braille and Binary Codes
 
 Samuel Morse wasn't the first person to successfully translate the letters of written language into an interpretable code. Nor was he the first person to be remembered more for the name of his code than for himself. That honor must go to a blind French teenager born some 18 years after Morse but who made his mark much more precociously. Little is known of his life, but what is known makes a compelling story.
 
@@ -554,9 +589,8 @@ The Braille capital indicator means that the following letter (and only the foll
 
 As early as 1855, some advocates of Braille began expanding the system with another row of two dots. Eight-dot Braille has been used for some special purposes, such as music, stenography, and Japanese kanji characters. Because it increases the number of unique codes to 2^8^, or 256, it's also been convenient in some computer applications, allowing lowercase and uppercase letters, numbers, and punctuation to all have their own unique codes without the annoyances of shift and escape codes.
 
-## Chapter Four
+## Chapter Four - Anatomy of a Flashlight
 
-## Anatomy of a Flashlight
 
 Flashlights are useful for numerous tasks, of which reading under the covers and sending coded messages are only the two most obvious. The common household flashlight can also take center stage in an educational show-and-tell of the ubiquitous stuff known as electricity.
 
@@ -708,9 +742,8 @@ Either the switch is closed or it's open. Either current flows or it doesn't. Ei
 
 Like the binary codes invented by Morse and Braille, this simple flashlight is either on or off. There's no in-between. This similarity between binary codes and simple electrical circuits is going to prove very useful in the chapters ahead.
 
-## Chapter Five
+## Chapter Five - Communicating Around Corners
 
-## Communicating Around Corners
 
 You're 12 years old. One horrible day your best friend's family moves to another town. You email and text your friend now and then, but it's just not quite as thrilling as those late-night sessions with the flashlights blinking out Morse code. Your second-best friend, who lives in the house next door to yours, eventually becomes your new best friend. It's time to teach your new best friend some Morse code and get the late-night flashlights blinking again.
 
@@ -878,9 +911,8 @@ These are problems faced in the mid-19th century by the people who strung up the
 
 The solution to this problem---not for flashlights but for the clicking and clacking telegraphs of yesteryear---turns out to be a simple and humble device, but one from which entire computers can be built.
 
-## Chapter Six
+## Chapter Six - Logic with Switches
 
-## Logic with Switches
 
 What is truth? Aristotle thought that logic had something to do with it. The collection of his teachings known as the _Organon_ (which dates from the fourth century BCE) is the earliest extensive writing on the subject of logic. To the ancient Greeks, logic was a means of analyzing language in the search for truth and thus was considered a form of philosophy. The basis of Aristotle's logic was the _syllogism_. The most famous syllogism (which isn't actually found in the works of Aristotle) is
 
@@ -1327,9 +1359,8 @@ And that's enough to complete the circuit, light up the lightbulb, and indicate 
 
 George Boole never wired such a circuit. He never had the thrill of seeing a Boolean expression realized in switches, wires, and lightbulbs. One obstacle, of course, was that the incandescent lightbulb wasn't invented until 15 years after Boole's death. But the telegraph had been invented ten years before the publication of Boole's _The Laws of Thought_, and an important part of the telegraph system was a simple device that could perform operations of logic with much more agility than mere switches could.
 
-## Chapter Seven
+## Chapter Seven - Telegraphs and Relays
 
-## Telegraphs and Relays
 
 Samuel Finley Breese Morse was born in 1791 in Charlestown, Massachusetts, the town where the Battle of Bunker Hill was fought and which is now the northeast part of Boston. In the year of Morse's birth, the United States Constitution had been in effect just two years and George Washington was serving his first term as president. Catherine the Great ruled Russia. In France, the Revolution was still in progress, and Louis XVI and Marie Antoinette would be marched to the guillotine two years later. In 1791, Mozart completed _The Magic Flute_, his last opera, and died later that year at the age of 35, but the 20-year-old Beethoven was already being noticed.
 
@@ -1436,9 +1467,8 @@ The relay is a remarkable device. It's a switch, surely, but a switch that's tur
 
 Yes, this relay thing is much too sweet an invention to leave sitting around the telegraphy museum. Let's grab one and stash it inside our jacket and walk quickly past the guards. An idea is brewing in our minds.
 
-## Chapter Eight
+## Chapter Eight - Relays and Gates
 
-## Relays and Gates
 
 Reduced to its essentials, a computer is a synthesis of Boolean algebra and electricity. The crucial components that embody this melding of math and hardware are known as _logic gates_. These gates are not unlike the familiar gates through which water or people pass. Logic gates perform simple operations in Boolean logic by blocking or letting through the flow of electrical current.
 
@@ -1942,9 +1972,8 @@ In the second expression, the two operands are inverted and then combined with t
 
 The next major project is nothing less than a digital adding machine implemented entirely with logic gates. But that project will need to be deferred for several chapters while we go back to elementary school and learn to count.
 
-## Chapter Nine
+## Chapter Nine - Our Ten Digits
 
-## Our Ten Digits
 
 The idea that language is merely a code seems readily acceptable. Many of us at least attempted to learn a foreign language in high school, so we're willing to acknowledge that the animal we call a cat in English can also be a _gato_, _chat_, _Katze_, _кошка_, or _γάτα_.
 
@@ -2146,9 +2175,8 @@ What's best about the positional system of notation is not how well it works, bu
 
 Interestingly enough, much of what we know about decimal numbering can be applied to a number system more appropriate for our friends in cartoons.
 
-## Chapter Ten
+## Chapter Ten - Alternative 10s
 
-## Alternative 10s
 
 Ten is an exceptionally important number to us humans. Ten is the number of fingers and toes most of us have, and we certainly prefer to have all ten of each. Because our fingers are convenient for counting, we humans have developed an entire number system that's based on the number ten.
 
@@ -2628,9 +2656,8 @@ Each of the binary digits at the bottom is displayed using a lightbulb driven by
 
 Sometime around 1947, the American mathematician John Wilder Tukey (1915--2000) realized that the phrase _binary digit_ was likely to assume a much greater importance in the years ahead as computers became more prevalent. He decided to coin a new, shorter word to replace the unwieldy five syllables of _binary digit_. He considered _bigit_ and _binit_ but settled instead on the short, simple, elegant, and perfectly lovely word _bit_.
 
-## Chapter Eleven
+## Chapter Eleven - Bit by Bit by Bit
 
-## Bit by Bit by Bit
 
 A story dating from at least the 1950s tells of a man traveling home after a stint in a distant prison. He doesn't know if he'll be welcomed back, so he requests a sign in the form of some cloth tied around a branch of a tree. In one version of the story, the man is traveling by train to his family, and he hopes to see a white ribbon on an apple tree. In another, he's traveling by bus to his wife, and he's looking for a yellow handkerchief on an oak tree. In both versions of the story, the man arrives to see the tree covered with hundreds of these banners, leaving no doubt of his welcome.
 
@@ -3027,9 +3054,8 @@ Codes such as the UPC and QR certainly look forbidding at first glance, and peop
 
 Bits are everywhere, but toward the end of my discussion of the QR code, I referred to "8-bit values." There's a special word for 8-bit values. You may have heard of it.
 
-## Chapter Twelve
+## Chapter Twelve - Bytes and Hexadecimal
 
-## Bytes and Hexadecimal
 
 Individual bits can make big statements: yes or no, true or false, pass or fail. But most commonly, multiple bits are grouped together to represent numbers and, from there, all kinds of data, including text, sound, music, pictures, and movies. A circuit that adds two bits together is interesting, but a circuit that adds multiple bits is on its way to becoming part of an actual computer.
 
@@ -3289,9 +3315,8 @@ If you prefer not to do these calculations by hand, both the Windows and macOS c
 
 Or you can build the 8-bit binary adder in [Chapter 14](#ch14.xhtml#ch14).
 
-## Chapter Thirteen
+## Chapter Thirteen - From ASCII to Unicode
 
-## From ASCII to Unicode
 
 Every time we tap on a tablet or poke on our phones or sit down at a laptop or desktop computer, we're dealing with text. We're either reading text, typing text, or cutting and pasting text from one place to another---from webpages to word processors, from email to social networks, from quips we see online to friends that we message.
 
@@ -3614,9 +3639,8 @@ Mystery solved.
 
 By extending computing to become a universal and multicultural experience, Unicode has been an enormously important standard. But like anything else, it doesn't work unless it's used correctly.
 
-## Chapter Fourteen
+## Chapter Fourteen - Adding with Logic Gates
 
-## Adding with Logic Gates
 
 Addition is the most basic of arithmetic operations, so if we want to build a computer (and that is my not-so-hidden agenda in this book), we must first know how to build something that adds two numbers together. When you come right down to it, addition is just about the _only_ thing that computers do. If we can build something that adds, we're well on our way to building something that uses addition to also subtract, multiply, divide, calculate mortgage payments, guide rockets to Mars, play chess, and use social media to share our latest dance moves, kitchen feats, or pet antics.
 
@@ -3940,9 +3964,8 @@ And now you might ask, "Is this _really_ the way that computers add numbers toge
 
 Excellent question!
 
-## Chapter Fifteen
+## Chapter Fifteen - Is This for Real?
 
-## Is This for Real?
 
 In the previous chapter, you saw how you can wire relays together to make a 1-bit adder and then combine eight of them to add two bytes together. You even saw how those 8-bit adders could be cascaded to add even larger numbers, and you may have wondered, Is this really how computers add numbers?
 
@@ -4161,9 +4184,8 @@ A look-ahead carry generator is designed to ameliorate this trend by providing c
 
 Logic gates aren't metaphors or imaginary objects. They are very real. Logic gates and adders were once built out of relays, and then relays were replaced by vacuum tubes, and vacuum tubes were replaced by transistors, and transistors were replaced by integrated circuits. But the underlying concepts remained exactly the same.
 
-## Chapter Sixteen
+## Chapter Sixteen - But What About Subtraction?
 
-## But What About Subtraction?
 
 After you've convinced yourself that relays, tubes, or transistors can indeed be wired together to add binary numbers, you might ask, "But what about subtraction?" Rest assured that you're not making a nuisance of yourself by asking questions like this; you're actually being quite perceptive. Addition and subtraction complement each other in some ways, but the mechanics of the two operations are quite different. An addition marches consistently from the rightmost column of digits to the leftmost column. Each carry from one column is added to the next column. But we don't _carry_ in subtraction; instead, we _borrow_, and that involves an intrinsically different mechanism---a messy back-and-forth kind of thing.
 
@@ -4614,9 +4636,8 @@ Nothing about the numbers themselves will tell you whether they're signed or uns
 
 Bits are just 0s and 1s. They don't tell you anything _about_ themselves. That information must come from the context in which they're used.
 
-## Chapter Seventeen
+## Chapter Seventeen - Feedback and Flip-Flops
 
-## Feedback and Flip-Flops
 
 Everybody knows that electricity can make things move. A brief glance around the average home reveals electric motors in appliances as diverse as clocks, fans, food processors, and anything that spins a disk. Electricity also controls the vibrations of loudspeakers, headphones, and earbuds, bringing forth music and speech from our many devices. And even if that's not an electric car sitting outside, an electric motor is still responsible for starting up antique fossil-fuel engines.
 
@@ -5162,9 +5183,8 @@ We have now persuaded telegraph relays and transistors to add, subtract, and cou
 
 But let's first have some fun.
 
-## Chapter Eighteen
+## Chapter Eighteen - Let's Build a Clock!
 
-## Let's Build a Clock!
 
 What a fun project it might be to build a clock! Imagine a big old-fashioned grandfather clock, with an intricately carved wood case and a glass door through which you can see the ponderous swinging pendulum. Behind the ornate metal dial is a complex of gears that keep time using a clever little mechanism called an escapement, the ticking and tocking of which reverberates throughout your home and triggers solemn chimes every hour.
 
@@ -5658,9 +5678,8 @@ An animated version of this circuit displaying digits 0 through 9 is available o
 
 But however much fun we might be having in displaying animated digits corresponding to binary numbers, the goal of this book is not to build a clock.
 
-## Chapter Nineteen
+## Chapter Nineteen - An Assemblage of Memory
 
-## An Assemblage of Memory
 
 As we rouse ourselves from sleep every morning, memory fills in the blanks. We remember where we are, what we did the day before, and what we plan to do today. These memories might come in a rush or a dribble, and maybe after some minutes a few lapses might persist ("Funny, I don't remember wearing my socks to bed"), but all in all we can usually reassemble our lives and achieve enough continuity to commence another day.
 
@@ -6055,9 +6074,8 @@ The front of this computer is a control panel with nothing but switches and ligh
 
 A coincidence? I don't think so.
 
-## Chapter Twenty
+## Chapter Twenty - Automating Arithmetic
 
-## Automating Arithmetic
 
 The human species is often amazingly inventive and industrious but at the same time profoundly lazy. It's very clear that we humans don't like to work. This aversion to work is so extreme---and our ingenuity so acute---that we're eager to devote countless hours designing and building clever devices that might shave a few minutes off our workday. Few fantasies tickle the human pleasure center more than a vision of relaxing in a hammock watching some newfangled contraption we just built mow the lawn.
 
@@ -6482,9 +6500,8 @@ Beginning in the next chapter, I'm going to take you inside the Intel 8080 by at
 
 I won't finish this ambitious project. My version of the Intel 8080 won't be as powerful as the real thing. But I'll get far enough that by the time I'm done, you'll have an exceptionally deep understanding of what's going on inside a computer.
 
-## Chapter Twenty-One
+## Chapter Twenty-One - The Arithmetic Logic Unit
 
-## The Arithmetic Logic Unit
 
 The modern computer is a complex assemblage of myriad components, but they can roughly be divided into three categories:
 
@@ -6848,9 +6865,8 @@ The arithmetic logic unit is complete!
 
 Although the ALU is an extremely important component of the central processing unit, the CPU needs more than a way to perform arithmetic and logical operations on numbers. It needs a way to get numbers into the ALU, and a way to store the results and move them around. That's the next step.
 
-## Chapter Twenty-Two
+## Chapter Twenty-Two - Registers and Busses
 
-## Registers and Busses
 
 Many of the routine operations of a computer involve moving stuff around, and by "stuff" I mean bytes of course. We experience this movement of bytes every time we load or save a file, when streaming music or movies, or when videoconferencing. Sometimes if those bytes don't move fast enough, sound or video can freeze or become garbled. We've all been there.
 
@@ -7188,9 +7204,8 @@ Like the earlier block diagram of the data bus, this block diagram of the addres
 
 It is these signals---properly coordinated and synchronized---that cause instructions to be executed by the CPU. It is these signals that are the pulsing life force of the computer, and they deserve their own chapter. That's up next.
 
-## Chapter Twenty-Three
+## Chapter Twenty-Three - CPU Control Signals
 
-## CPU Control Signals
 
 An old adage commonly heard in engineering circles contends that the last 10% of a project requires 90% of the work. Regardless how distressing this idea might seem, it's something to keep in mind. We've already made great progress in constructing a computer, but we're not yet finished. What's left isn't quite 90% of the work, but the home stretch might be a little further away than it seems.
 
@@ -7626,9 +7641,8 @@ Can repetition like this be avoided? Can there be an instruction that causes oth
 
 This topic is so important that an entire chapter is devoted to it!
 
-## Chapter Twenty-Four
+## Chapter Twenty-Four - Loops, Jumps, and Calls
 
-## Loops, Jumps, and Calls
 
 Our lives are full of repetition. We count the days through the natural rhythms of the rotation of the earth, the revolution of the moon around the earth, and of the earth around the sun. Each day is different, but our lives are often structured by standard routines that are similar from day to day.
 
@@ -8239,9 +8253,8 @@ Still, however, all CPUs work in basically the same way: They execute instructio
 
 It's time to explore what else is required to make a real computer.
 
-## Chapter Twenty-Five
+## Chapter Twenty-Five - Peripherals
 
-## Peripherals
 
 The central processing unit (CPU) is certainly the most important component of a computer, but it must be supplemented with other hardware. As you've seen, a computer also requires random access memory (RAM) that contains both machine-code instructions for the processor to execute and data for these instructions to access. As you'll also recall, RAM is volatile---it loses its contents when the power is turned off. So another useful component of a computer is a long-term mass storage device that can retain code and data in the absence of power.
 
@@ -8407,9 +8420,8 @@ The sectors associated with a particular file don't have to be consecutive. They
 
 Keeping track of all this---including the whole process of storing files and retrieving them---is the province of an extremely important piece of software known as the _operating system_.
 
-## Chapter Twenty-Six
+## Chapter Twenty-Six - The Operating System
 
-## The Operating System
 
 We have, at long last, assembled---at least in our imaginations---what seems to be a complete computer. This computer has a central processing unit (CPU), some random access memory (RAM), a keyboard, a video display whose memory is part of RAM, and some kind of mass-storage device. All the hardware is in place, and we eye with excitement the on/off switch that will power it up and bring it to life. Perhaps this project has evoked in your mind the labors of Victor Frankenstein as he assembled his monster, or Geppetto as he built the wooden puppet that he will name Pinocchio.
 
@@ -8611,9 +8623,8 @@ Written largely by Finnish programmer Linus Torvalds (born 1969), Linux has beco
 
 But the internet is a subject for the final chapter in this book.
 
-## Chapter Twenty-Seven
+## Chapter Twenty-Seven - Coding
 
-## Coding
 
 All computers execute machine code, but programming in machine code is like eating with a toothpick. The bites are so small and the process so laborious that dinner takes forever. Likewise, the bytes of machine code perform the tiniest and simplest imaginable computing tasks---loading a number from memory into the processor, adding it to another, storing the result back to memory---so that it's difficult to imagine how they contribute to an entire meal.
 
@@ -9177,9 +9188,8 @@ Hardware floating-point arithmetic came to the desktop in 1980, when Intel relea
 
 Today's programmers use floating-point numbers as if they were simply part of the computer, as they indeed are.
 
-## Chapter Twenty-Eight
+## Chapter Twenty-Eight - The World Brain
 
-## The World Brain
 
 In 1936 and 1937, English author Herbert George Wells gave a series of public lectures on a rather peculiar topic. By this time, H. G. Wells was in his early seventies. His famous science fictions novels---_The Time Machine_, _The Island of Doctor Moreau_, _The Invisible Man_, and _The War of the Worlds_---had been published in the 1890s and made him famous. But Wells had evolved into a public intellectual who thought deeply about social and political issues and shared these thoughts with the public.
 
