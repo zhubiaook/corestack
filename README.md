@@ -1,1 +1,1 @@
-# learning-system-architecture-design
+# CoreStack
